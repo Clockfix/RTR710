@@ -1,0 +1,30 @@
+|main
+i_clk => r_counter_reg[0].CLK
+i_clk => r_counter_reg[1].CLK
+i_clk => r_counter_reg[2].CLK
+i_clk => r_counter_reg[3].CLK
+i_clk => r_counter_reg[4].CLK
+i_clk => r_counter_reg[5].CLK
+i_clk => r_counter_reg[6].CLK
+i_clk => r_counter_reg[7].CLK
+i_clk => r_counter_reg[8].CLK
+i_clk => r_counter_reg[9].CLK
+i_clk => r_counter_reg[10].CLK
+i_clk => r_counter_reg[11].CLK
+i_clk => r_counter_reg[12].CLK
+i_clk => r_counter_reg[13].CLK
+i_clk => r_counter_reg[14].CLK
+i_clk => r_counter_reg[15].CLK
+i_clk => r_counter_reg[16].CLK
+i_clk => r_counter_reg[17].CLK
+i_clk => r_counter_reg[18].CLK
+i_clk => r_counter_reg[19].CLK
+i_clk => r_counter_reg[20].CLK
+i_clk => r_counter_reg[21].CLK
+i_clk => r_counter_reg[22].CLK
+i_clk => r_counter_reg[23].CLK
+i_clk => r_counter_reg[24].CLK
+i_clk => r_led_reg.CLK
+o_led << r_led_reg.DB_MAX_OUTPUT_PORT_TYPE
+
+
