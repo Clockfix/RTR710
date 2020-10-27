@@ -27,6 +27,7 @@ ARCHITECTURE RTL OF trivial_divider IS
     SIGNAL r_done_reg, r_start : STD_LOGIC := '0';
 
     SIGNAL w_larger_eq, w_reminder_en, w_quotient_en, w_out_en, w_not_zero : STD_LOGIC;
+    SIGNAL w_done_en : STD_LOGIC; -- special enable wire that enable "done" register when w_out_en='1' or w_not_zero='0' -- to comply with task description(result wil be not correct)
 
 BEGIN
     -- enable for remondrer register
@@ -41,13 +42,16 @@ BEGIN
     -- compare numinator and denuminator - can we subtract one more time    
     w_larger_eq <= '1' WHEN (r_reminder_reg >= r_divisor_reg) ELSE
         '0';
+    w_done_en <= w_out_en OR (NOT w_not_zero);
 
     -- reg-state logic
     -- <your code goes here>
-    PROCESS
+    PROCESS (ALL)
     BEGIN
-        WAIT UNTIL rising_edge(clk);
-        r_start <= start;
+        IF rising_edge(clk) THEN
+            -- save start pulse in START register
+            r_start <= start;
+        END IF;
         IF start THEN
             -- reset internal registers
             r_quotient_reg <= (OTHERS => '0');
@@ -55,23 +59,31 @@ BEGIN
             r_quotient_out_reg <= (OTHERS => '0');
             r_reminder_reg <= (OTHERS => '0');
             r_reminder_out_reg <= (OTHERS => '0');
-            -- set new value to input registers
-            r_dividend_reg <= unsigned(divident);
-            r_divisor_reg <= unsigned(divisor);
+            IF rising_edge(clk) THEN
+                -- set new value to input registers
+                r_dividend_reg <= unsigned(divident);
+                r_divisor_reg <= unsigned(divisor);
+            END IF;
         ELSE
-            -- remonder reg
-            IF w_reminder_en THEN
-                r_reminder_reg <= r_reminder_next;
-            END IF;
-            -- quotient reg
-            IF w_quotient_en THEN
-                r_quotient_reg <= r_quotient_next;
-            END IF;
-            -- outputs registers
-            IF w_out_en THEN
-                r_quotient_out_reg <= r_quotient_out_next;
-                r_reminder_out_reg <= r_reminder_out_next;
-                r_done_reg <= '1';
+            IF rising_edge(clk) THEN
+                -- remonder reg
+                IF w_reminder_en THEN
+                    r_reminder_reg <= r_reminder_next;
+                END IF;
+                -- quotient reg
+                IF w_quotient_en THEN
+                    r_quotient_reg <= r_quotient_next;
+                END IF;
+                -- outputs registers
+                IF w_out_en THEN
+                    r_quotient_out_reg <= r_quotient_out_next;
+                    r_reminder_out_reg <= r_reminder_out_next;
+                    -- r_done_reg <= '1'; 
+                END IF;
+                -- done register
+                IF w_done_en THEN
+                    r_done_reg <= '1';
+                END IF;
             END IF;
         END IF;
     END PROCESS;

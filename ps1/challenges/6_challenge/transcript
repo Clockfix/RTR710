@@ -1,5 +1,5 @@
 # vsim tb -c -do "run -all; quit" 
-# Start time: 22:53:21 on Oct 25,2020
+# Start time: 22:00:21 on Oct 27,2020
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -2013,5 +2013,5 @@
 # ** Note: TEST SUCCESSFUL
 #    Time: 76375 ns  Iteration: 3  Instance: /tb
 #  quit
-# End time: 22:53:22 on Oct 25,2020, Elapsed time: 0:00:01
+# End time: 22:00:21 on Oct 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
