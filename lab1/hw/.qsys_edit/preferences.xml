@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable filter="All Interfaces">
+  <columns>
+   <connections preferredWidth="191" />
+   <irq preferredWidth="47" />
+  </columns>
+ </systemtable>
+ <library
+   expandedCategories="Library/Basic Functions/Bridges and Adaptors/Streaming,Library/Qsys Interconnect,Library/Processors and Peripherals/Hard Processor Components,Library/Qsys Interconnect/Memory-Mapped,Project,Library/Basic Functions/Bridges and Adaptors,Library/Basic Functions,Library/Processors and Peripherals,Library" />
+ <window width="451" height="753" x="458" y="-10" />
+ <generation synthesis="VHDL" />
+</preferences>
