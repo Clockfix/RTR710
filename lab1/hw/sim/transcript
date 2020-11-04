@@ -1,0 +1,17 @@
+# vsim tb -c -do "run -all; quit" 
+# Start time: 19:22:01 on Nov 04,2020
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading rtu.data_types(body)
+# Loading rtu.simulation(body)
+# Loading work.tb(rtl)
+# Loading work.lab(rtl)
+# run -all
+# ** Note: Test SUCCESSFUL!
+#    Time: 70 ns  Iteration: 1  Instance: /tb
+#  quit
+# End time: 19:22:02 on Nov 04,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

@@ -1,0 +1,101 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/imants/MyFPGA/lab1/hw/sim
+Pdata_types
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 0
+Z3 w1603730933
+R0
+Z4 8../pkg/data_types.vhd
+Z5 F../pkg/data_types.vhd
+l0
+L24 1
+VeZed5N0Qh_dgZ]Z9k@2[f1
+!s100 5^39lbKA1P0oBe3e92?V62
+Z6 OV;C;2020.1;71
+33
+b1
+Z7 !s110 1604510518
+!i10b 1
+Z8 !s108 1604510518.000000
+Z9 !s90 -work|rtu|-2008|../pkg/data_types.vhd|-allowProtectedBeforeBody|
+Z10 !s107 ../pkg/data_types.vhd|
+!i113 1
+Z11 o-work rtu -2008 -allowProtectedBeforeBody
+Z12 tExplicit 1 CvgOpt 0
+Bbody
+DPx4 work 10 data_types 0 22 eZed5N0Qh_dgZ]Z9k@2[f1
+R1
+R2
+!i122 0
+l0
+L54 1
+V;ok0A^9[?h3][ZD]Aon^n3
+!s100 mXgYL@C0^jLG>?42PXA^U2
+R6
+33
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Psimulation
+Z13 DPx3 rtu 10 data_types 0 22 eZed5N0Qh_dgZ]Z9k@2[f1
+Z14 DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
+Z15 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+R1
+R2
+!i122 1
+Z16 w1604478709
+R0
+Z17 8../pkg/simulation.vhd
+Z18 F../pkg/simulation.vhd
+l0
+L34 1
+Vf7:jMiOO3LIm7[ii?6Mfh1
+!s100 ^oC3HN3lg7>RkMPSSc4Qo3
+R6
+33
+b1
+R7
+!i10b 1
+R8
+Z19 !s90 -work|rtu|-2008|../pkg/simulation.vhd|-allowProtectedBeforeBody|
+!s107 ../pkg/simulation.vhd|
+!i113 1
+R11
+R12
+Bbody
+DPx4 work 10 simulation 0 22 f7:jMiOO3LIm7[ii?6Mfh1
+R13
+R14
+R15
+R1
+R2
+!i122 1
+l0
+L87 1
+Vgg4L6?V3?]VZCKZcNYYdU1
+!s100 ??[AAj118:o`FN3UIUYj33
+R6
+33
+R7
+!i10b 1
+R8
+R19
+Z20 !s107 ../pkg/simulation.vhd|
+!i113 1
+R11
+R12
