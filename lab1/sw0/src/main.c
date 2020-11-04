@@ -42,12 +42,15 @@ int main(int argc, char *argv[]){
 
     /* Acquire "/dev/mem" file's descriptor (use "open" syscall) */
     // LAB: your code goes here
-
+    fd = open("/dev/mem", O_RDWR);
     /* Map LWHPS2FPGA physical address to this process (use "mmap" syscall) */
     // LAB: your code goes here
-    
+    mem_lwh2f = mmap(NULL, LWHPS2FPGA_SPAN, PROT_READ | PROT_WRITE,
+         MAP_SHARED, fd, LWHPS2FPGA_BASE);
     /* Map HPS2FPGA physical address to this process (use "mmap" syscall) */
     // LAB: your code goes here
+    mem_h2f = mmap(NULL, HPS2FPGA_SPAN, PROT_READ | PROT_WRITE,
+         MAP_SHARED, fd, HPS2FPGA_BASE);
 
 
     /* select target memory region */
