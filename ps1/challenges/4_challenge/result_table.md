@@ -16,4 +16,4 @@ For each range answer the following question: How many bits are necessary to rep
 | 2   | 0..57          | 6              |
 | 3   | -1..57         | 7              |
 | 4   | -1986..2020    | 12             |
-| 5   | 0..68719476736 | 36             | 
+| 5   | 0..68719476736 | 37             | 

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Sun Nov 15 13:20:23 2020
+# Process ID: 24271
+# Current directory: /home/imants/git/RTR710/ps1/vivado_project/vivado_project.runs/synth_1
+# Command line: vivado -log circular_shifter_left.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source circular_shifter_left.tcl
+# Log file: /home/imants/git/RTR710/ps1/vivado_project/vivado_project.runs/synth_1/circular_shifter_left.vds
+# Journal file: /home/imants/git/RTR710/ps1/vivado_project/vivado_project.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source circular_shifter_left.tcl -notrace

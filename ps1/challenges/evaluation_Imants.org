@@ -1,0 +1,14 @@
+#+TITLE: Evaluation summary of student HW problem set submission
+
+
+|---------+-----+-----+-----+-----+-----+-----+-------+-------------------------------|
+| Student | ch1 | ch2 | ch3 | ch4 | ch5 | ch6 | Total | Notes                         |
+|---------+-----+-----+-----+-----+-----+-----+-------+-------------------------------|
+|         |     |     |     |     |     |     |       | ch4 Error in the last one     |
+| Imants  |   1 |   1 |   1 | 0.8 | 1.5 | 3.5 |   8.8 | ch5 Unefficient, try comming  |
+|         |     |     |     |     |     |     |       | up with a solution using only |
+|         |     |     |     |     |     |     |       | 4 multiplexers.               |
+|         |     |     |     |     |     |     |       | ch6 Style could be improved,  |
+|         |     |     |     |     |     |     |       | and it can be done much more  |
+|         |     |     |     |     |     |     |       | efficient.                    |
+|---------+-----+-----+-----+-----+-----+-----+-------+-------------------------------|
