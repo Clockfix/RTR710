@@ -38,33 +38,36 @@ int main(int argc, char *argv[])
         return -1;
     }
 
-    // _I("Writing 7SEGMENT - 1");
-    // for(i=0; i<16; i++){
-    //     *(mem_lwh2f+0x2000) = (i<<4) | i;
-    //     usleep(250000);
-    // }
-    // _I("Writing 7SEGMENT - 2");
-    // for(i=0; i<16; i++){
-    //     *(mem_lwh2f+0x2001) = (i<<4) | i;
-    //     usleep(250000);
-    // }
-    // _I("Writing 7SEGMENT - 3");
-    // for(i=0; i<16; i++){
-    //     *(mem_lwh2f+0x2002) = (i<<4) | i;
-    //     usleep(250000);
-    // }
+    _I("Writing 7SEGMENT - 1");
+    for (i = 0; i < 16; i++)
+    {
+        *(mem_lwh2f + 0x2000) = (i << 4) | i;
+        usleep(250000);
+    }
+    _I("Writing 7SEGMENT - 2");
+    for (i = 0; i < 16; i++)
+    {
+        *(mem_lwh2f + 0x2001) = (i << 4) | i;
+        usleep(250000);
+    }
+    _I("Writing 7SEGMENT - 3");
+    for (i = 0; i < 16; i++)
+    {
+        *(mem_lwh2f + 0x2002) = (i << 4) | i;
+        usleep(250000);
+    }
 
-    // Optional task
-
-    *(unsigned short*)(mem_lwh2f+0x2000) = 0xa3;  // on FPGA  XX00A3
-    usleep(2500000);
-    *(unsigned short *)(mem_lwh2f + 0x2000) = 0xa3ce; // on FPGA  XXA3CE
-    usleep(2500000);
-    *(unsigned long *)(mem_lwh2f + 0x2000) = 0xa3cedd; // on FPGA  A3CEDD
-    usleep(2500000);
-    *(unsigned short *)(mem_lwh2f + 0x2001) = 0x1111; // on FPGA   1111XX
     // Experimenting with two-byte writes (stores)
     // LAB: your code goes here
+
+    // Optional task
+    // *(unsigned short*)(mem_lwh2f+0x2000) = 0xa3;  // on FPGA  XX00A3
+    // usleep(2500000);
+    // *(unsigned short *)(mem_lwh2f + 0x2000) = 0xa3ce; // on FPGA  XXA3CE
+    // usleep(2500000);
+    // *(unsigned long *)(mem_lwh2f + 0x2000) = 0xa3cedd; // on FPGA  A3CEDD
+    // usleep(2500000);
+    // *(unsigned short *)(mem_lwh2f + 0x2001) = 0x1111; // on FPGA   1111XX
 
     _I("Unmapping physical address");
     munmap(mem_lwh2f, LWHPS2FPGA_SPAN);

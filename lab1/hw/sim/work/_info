@@ -10,134 +10,134 @@ z2
 cModel Technology
 Z0 d/home/imants/MyFPGA/lab1/hw/sim
 Ehex_decoder
-Z1 w1604426217
+Z1 w1586432567
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 3
-R0
-Z4 8../src/hex_decoder.vhd
-Z5 F../src/hex_decoder.vhd
+!i122 6
+Z4 d/home/imants/git/RTR710/lab1/hw/sim
+Z5 8../src/hex_decoder.vhd
+Z6 F../src/hex_decoder.vhd
 l0
 L4 1
 V>I?Mj0Kz<MY?;1c1=nEHz1
 !s100 fZDX?<A>@Q0^g`EJ1Ji_83
-Z6 OV;C;2020.1;71
+Z7 OV;C;2020.1;71
 33
-Z7 !s110 1604510518
+Z8 !s110 1605453590
 !i10b 1
-Z8 !s108 1604510518.000000
-Z9 !s90 -work|work|-2008|../src/hex_decoder.vhd|
-Z10 !s107 ../src/hex_decoder.vhd|
+Z9 !s108 1605453590.000000
+Z10 !s90 -work|work|-2008|../src/hex_decoder.vhd|
+Z11 !s107 ../src/hex_decoder.vhd|
 !i113 1
-Z11 o-work work -2008
-Z12 tExplicit 1 CvgOpt 0
+Z12 o-work work -2008
+Z13 tExplicit 1 CvgOpt 0
 Artl
 R2
 R3
 DEx4 work 11 hex_decoder 0 22 >I?Mj0Kz<MY?;1c1=nEHz1
-!i122 3
+!i122 6
 l12
 L11 23
 VPhC4SJ3ZBek@CPY2inL7S3
 !s100 X6RD6=BY7a3J[dW5Q8H7U0
-R6
-33
 R7
-!i10b 1
+33
 R8
+!i10b 1
 R9
 R10
-!i113 1
 R11
+!i113 1
 R12
+R13
 Elab
-Z13 w1604502537
+Z14 w1605451045
 R2
 R3
-!i122 2
-R0
-Z14 8../src/lab.vhd
-Z15 F../src/lab.vhd
+!i122 5
+R4
+Z15 8../src/lab.vhd
+Z16 F../src/lab.vhd
 l0
 L4 1
-Vk48d_n`^27Wao>;z:9oE63
-!s100 fZKBU_>gK@F4IZN;n9?L]2
-R6
-33
+V3R`<M]mDe2K@l;HZdb9l=0
+!s100 SOn]XojoiA6aJdLG3T3bP2
 R7
-!i10b 1
+33
 R8
-Z16 !s90 -work|work|-2008|../src/lab.vhd|
-Z17 !s107 ../src/lab.vhd|
+!i10b 1
+R9
+Z17 !s90 -work|work|-2008|../src/lab.vhd|
+Z18 !s107 ../src/lab.vhd|
 !i113 1
-R11
 R12
+R13
 Artl
 R2
 R3
-Z18 DEx4 work 3 lab 0 22 k48d_n`^27Wao>;z:9oE63
-!i122 2
-l28
-L18 69
-V>9JN?^fXIY4UAhQdGBiN72
-!s100 Z>;jHfUi2EMdC@4FWz4f53
-R6
-33
+Z19 DEx4 work 3 lab 0 22 3R`<M]mDe2K@l;HZdb9l=0
+!i122 5
+l26
+L18 53
+V[:9@3L1OeJa<4l30k`[;^1
+!s100 b>lcGODic53Y^_njaV_1[3
 R7
-!i10b 1
+33
 R8
-R16
+!i10b 1
+R9
 R17
+R18
 !i113 1
-R11
 R12
+R13
 Etb
-Z19 w1604478783
-Z20 DPx3 rtu 10 data_types 0 22 eZed5N0Qh_dgZ]Z9k@2[f1
-Z21 DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
-Z22 DPx3 rtu 10 simulation 0 22 f7:jMiOO3LIm7[ii?6Mfh1
-Z23 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z20 w1604599887
+Z21 DPx3 rtu 10 data_types 0 22 eZed5N0Qh_dgZ]Z9k@2[f1
+Z22 DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
+Z23 DPx3 rtu 10 simulation 0 22 f7:jMiOO3LIm7[ii?6Mfh1
+Z24 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 R2
 R3
-!i122 4
-R0
-Z24 8../tb/tb.vhd
-Z25 F../tb/tb.vhd
+!i122 7
+R4
+Z25 8../tb/tb.vhd
+Z26 F../tb/tb.vhd
 l0
 L8 1
 V7H]@Z^>kQz1j^mj_GJKn93
 !s100 Bd?@KReGcfZOli_@Cm]WS2
-R6
-33
 R7
+33
+Z27 !s110 1605453591
 !i10b 1
-R8
-Z26 !s90 -work|work|-2008|../tb/tb.vhd|
-!s107 ../tb/tb.vhd|
+R9
+Z28 !s90 -work|work|-2008|../tb/tb.vhd|
+Z29 !s107 ../tb/tb.vhd|
 !i113 1
-R11
 R12
+R13
 Artl
-R18
-R20
+R19
 R21
 R22
 R23
+R24
 R2
 R3
-DEx4 work 2 tb 0 22 7H]@Z^>kQz1j^mj_GJKn93
-!i122 4
+Z30 DEx4 work 2 tb 0 22 7H]@Z^>kQz1j^mj_GJKn93
+!i122 7
 l21
-L11 93
-VQaMoJD>C04gB5A]U[lkEA1
-!s100 2cm695JXe=4lTA16o_Yn01
-R6
-33
+Z31 L11 93
+Z32 VQaMoJD>C04gB5A]U[lkEA1
+Z33 !s100 2cm695JXe=4lTA16o_Yn01
 R7
+33
+R27
 !i10b 1
-R8
-R26
-Z27 !s107 ../tb/tb.vhd|
+R9
+R28
+R29
 !i113 1
-R11
 R12
+R13
