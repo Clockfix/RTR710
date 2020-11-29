@@ -1,12 +1,15 @@
 #include <stdio.h>
-#define _I(fmt, args...)  printf(fmt "\n", ##args)
+#include <fcntl.h>  // add aditional *.h file
+#include <errno.h>  // add aditional *.h file
+#include <unistd.h> // add aditional *.h file
+#include <stdlib.h> // add aditional *.h file
+#define _I(fmt, args...) printf(fmt "\n", ##args)
 
-
-void print_usage(char *fname){
+void print_usage(char *fname)
+{
     printf("USAGE:\n");
     printf("\t%s <input file name> <output file fname>\n", fname);
 }
-
 
 /* Challenge 1: 
  * 1. Parse the command line arguments to extract the filename.
@@ -25,28 +28,80 @@ void print_usage(char *fname){
  *      Do you see any mathematical relationship between lower and upper case 
  *      characters?
  * */
-int main(int argc, char *argv[]){
+int main(int argc, char *argv[])
+{
 
     /* checking input parameters */
-    if(argc < 3){
+    if (argc < 3)
+    {
         print_usage(argv[0]);
         return 0;
     }
 
     _I("Parsing command line arguments");
     /* your code goes here */
+    int fd_read;  // read file descriptor
+    int fd_write; // write file descriptor
 
+    if ((fd_read = open(argv[1], O_RDONLY | O_SYNC)) < 0)
+    {
+        _I("    Failed to open %s file", argv[1]);
+        return -1;
+    }
+    if (fd_write = open(argv[2], O_CREAT | O_WRONLY | O_EXCL, S_IRUSR | S_IWUSR) < 0)
+    {
+        /* failure */
+        if (errno == EEXIST)
+        {
+            /* the file already existed */
+            _I("    Failed to create %s file already exist", argv[2]);
+            return -1;
+        }
+    }
+    else
+    {
+        /* the file created */
+        _I("    %s file created", argv[2]);
+    }
 
     _I("Opening files");
     /* your code goes here */
 
+    FILE *f = fopen(argv[1], "rb");
+    FILE *w = fopen(argv[2], "w");
 
     _I("Converting inputs");
     /* your code goes here */
 
+    // determining size of file
+    fseek(f, 0, SEEK_END);
+    long fsize = ftell(f);
+    fseek(f, 0, SEEK_SET);
+    // content loaded to string
+    char *string = malloc(fsize + 1);
+    fread(string, 1, fsize, f);
+
+    string[fsize] = 0;
+    // converting all characters to uppercase
+    for (int i = 0; i < fsize; i++)
+    {
+        // detecting lowercase characters
+        if ((string[i] > 0x60) && (string[i] < 0x7b))
+        {
+            string[i] = string[i] - 0x20;
+        }
+    }
+    // print out string
+    // _I("%s", string);
+    // Write string to file
+    int wr;
+    wr = fwrite(string, 1, fsize, w);
 
     _I("Closing files");
     /* your code goes here */
-
+    fclose(f);
+    fclose(w);
+    close(fd_read);
+    close(fd_write);
     return 0;
 }
