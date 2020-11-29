@@ -40,35 +40,20 @@ int main(int argc, char *argv[])
 
     _I("Parsing command line arguments");
     /* your code goes here */
-    int fd_read;  // read file descriptor
-    int fd_write; // write file descriptor
-
-    if ((fd_read = open(argv[1], O_RDONLY | O_SYNC)) < 0)
-    {
-        _I("    Failed to open %s file", argv[1]);
-        return -1;
-    }
-    if (fd_write = open(argv[2], O_CREAT | O_WRONLY | O_EXCL, S_IRUSR | S_IWUSR) < 0)
-    {
-        /* failure */
-        if (errno == EEXIST)
-        {
-            /* the file already existed */
-            _I("    Failed to create %s file already exist", argv[2]);
-            return -1;
-        }
-    }
-    else
-    {
-        /* the file created */
-        _I("    %s file created", argv[2]);
-    }
+    char *fname_in, *fname_out;
+    fname_in = argv[1];
+    fname_out = argv[2];
 
     _I("Opening files");
     /* your code goes here */
 
-    FILE *f = fopen(argv[1], "rb");
-    FILE *w = fopen(argv[2], "w");
+    FILE *f = fopen(fname_in, "r");
+    FILE *w = fopen(fname_out, "w");
+    if ((f == NULL) || (w == NULL))
+    {
+        _I("FAILED to open files");
+        return 1;
+    }
 
     _I("Converting inputs");
     /* your code goes here */
@@ -96,12 +81,12 @@ int main(int argc, char *argv[])
     // Write string to file
     int wr;
     wr = fwrite(string, 1, fsize, w);
+    free(string);
+    free(wr);
 
     _I("Closing files");
     /* your code goes here */
     fclose(f);
     fclose(w);
-    close(fd_read);
-    close(fd_write);
     return 0;
 }
