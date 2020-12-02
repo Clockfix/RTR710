@@ -6,6 +6,7 @@ ps1/quartus_project/output_files
 *.tmp
 *.exe
 *.out
+.*
 simulation/
 output_files/
 .qsys_edit/

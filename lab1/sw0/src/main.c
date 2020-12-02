@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
     }
 
     /* Acquire "/dev/mem" file's descriptor (use "open" syscall) */
-    // LAB: your code goes here
+    // LAB: your code goes here     <--------------------!!!
     _I("Opening (acquiring descriptor) \"/dev/mem\" file");
     fd = open("/dev/mem", O_RDWR);
     if (fd == -1)
@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
         return 1;
     }
     /* Map LWHPS2FPGA physical address to this process (use "mmap" syscall) */
-    // LAB: your code goes here
+    // LAB: your code goes here     <--------------------!!!
     _I("Mapping physical address of the LWHPS2FPGA");
     mem_lwh2f = mmap(NULL, LWHPS2FPGA_SPAN, PROT_READ | PROT_WRITE,
                      MAP_SHARED, fd, LWHPS2FPGA_BASE);
@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
         return 1;
     }
     /* Map HPS2FPGA physical address to this process (use "mmap" syscall) */
-    // LAB: your code goes here
+    // LAB: your code goes here     <--------------------!!!
     _I("Mapping physical address of the HPS2FPGA");
     mem_h2f = mmap(NULL, HPS2FPGA_SPAN, PROT_READ | PROT_WRITE,
                    MAP_SHARED, fd, HPS2FPGA_BASE);
