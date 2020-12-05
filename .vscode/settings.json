@@ -5,9 +5,14 @@
         "array": "c",
         "string": "c",
         "string_view": "c",
-        "random": "c"
+        "random": "c",
+        "deque": "c",
+        "unordered_map": "c",
+        "vector": "c",
+        "initializer_list": "c"
     },
     "cSpell.words": [
-        "lhead"
+        "lhead",
+        "ltail"
     ]
 }

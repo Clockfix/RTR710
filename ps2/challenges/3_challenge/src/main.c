@@ -22,7 +22,8 @@ typedef struct llist
 #define BUFFER_SIZE 256
 
 /***** global: start of the linked list structure *****/
-llist_t *lhead = NULL;
+llist_t *lhead = NULL; // this is head pointer (address of first node)
+llist_t *ltail = NULL; // this is tail pointer (address of last node)
 
 void llist_print_single(llist_t *entry)
 {
@@ -68,7 +69,7 @@ void llist_init(FILE *fd)
     /* your code goes here */
 
     // geting number of records
-    _I("    Getting number of records and allocating memory");
+    _I("    Getting number of records");
     char ch;
     while (!feof(fd))
     {
@@ -79,126 +80,82 @@ void llist_init(FILE *fd)
         }
     }
     rewind(fd);
-    printf("    There are %i records in CSV!\n", sample_count);
+    printf("        There are %i records in CSV!\n", sample_count);
 
     // reading file and adding them to linked lists
     _I("    Reading file ");
-    char buf[BUFFER_SIZE];
+    // tem values
+    char buf[BUFFER_SIZE]; // buffer - for storing line content of file
+    char *tok;
     unsigned temp_year;
     char *temp_city;
+    int name_size; // size of temp_city string
     unsigned temp_population_total;
     unsigned temp_population_below_wa;
     unsigned temp_population_in_wa;
     unsigned temp_population_above_wa;
-    // allocating city name array
-    // char *array_city[NUM_OF_LETTERS];
-    char array_city[NUM_OF_LETTERS];
-    
-    fgets(buf, sizeof(buf), fd);
-    char *tok = strtok(buf, ",");
-    temp_year = atoi(tok);
-    tok = strtok(NULL, ",");
-    temp_city = tok;
-    int name_size;
-    name_size = strlen(temp_city);
-    printf("%i\n",name_size);
-    //char array_city[0][name_size] ;
-    *array_city[0]= temp_city;
-    tok = strtok(NULL, ",");
-    temp_population_total = atof(tok);
-    tok = strtok(NULL, ",");
-    temp_population_below_wa = atof(tok);
-    tok = strtok(NULL, ",");
-    temp_population_in_wa = atof(tok);
-    tok = strtok(NULL, ",");
-    temp_population_above_wa = atof(tok);
-
-    // char line[BUFFER_SIZE];
-    // while (fgets(line, sizeof(line), fd))
-    // {
-    //     char* tmp = strdup(line);
-    //     printf("Field 2 would be %s\n", getfield(tmp, 3));
-    //     // NOTE strtok clobbers tmp
-    //     free(tmp);
-    // }
-   
-    printf("    %i, %s, %i,%i,%i,%i\n",temp_year,*array_city[0],temp_population_total,temp_population_below_wa,temp_population_in_wa,temp_population_above_wa);
-    fgets(buf, sizeof(buf), fd);
-    name_size = strlen(temp_city);
-    printf("%i\n",name_size);
-    //char *array_city[1][name_size] ;
-    *array_city[8]= temp_city;
-    printf("    %i, %s, %i,%i,%i,%i\n",temp_year,*array_city[8],temp_population_total+1,temp_population_below_wa,temp_population_in_wa,temp_population_above_wa);
-fgets(buf, sizeof(buf), fd);
-name_size = strlen(tok);
-    printf("%i\n",name_size);
-    printf("    %i, %s, %i,%i,%i,%i\n",temp_year,*array_city[0],temp_population_total,temp_population_below_wa,temp_population_in_wa,temp_population_above_wa);
-
-    // Creating linked lists
-    // creatinf first entry
-    // https://www.learn-c.org/en/Linked_lists
-    lhead = (llist_t *)malloc(sizeof(llist_t));
-    // if (lhead == NULL) {
-    //     return 1;
-    // }
-    lhead->year = 2020;
-    //lhead->city = array_city[0];
-    lhead->population_total = 100;
-    lhead->population_below_wa = 50;
-    lhead->population_in_wa = 20;
-    lhead->population_above_wa = 30;
-    lhead->next = NULL;
-
-    // add entry at end of list
-    llist_t *current = lhead;
-    while (current->next != NULL)
+    for (int i = 0; i < sample_count; i++)
     {
-        current = current->next;
+        fgets(buf, sizeof(buf), fd);
+        tok = strtok(buf, ",");
+        temp_year = atoi(tok);
+        tok = strtok(NULL, ",");
+        temp_city = tok;
+        name_size = strlen(temp_city);
+        tok = strtok(NULL, ",");
+        temp_population_total = atof(tok);
+        tok = strtok(NULL, ",");
+        temp_population_below_wa = atof(tok);
+        tok = strtok(NULL, ",");
+        temp_population_in_wa = atof(tok);
+        tok = strtok(NULL, ",");
+        temp_population_above_wa = atof(tok);
+
+        // Creating linked lists
+        // creatinf first entry
+        // https://www.learn-c.org/en/Linked_lists
+        if (lhead == NULL)
+        {
+            // _I("    Creating linked list first node");
+            lhead = (llist_t *)malloc(sizeof(llist_t));
+            lhead->year = temp_year;
+            lhead->city = (char *)malloc(strlen(temp_city) + 1); // allocating 20 char long string
+            strcpy(lhead->city, temp_city);
+            lhead->population_total = temp_population_total;
+            lhead->population_below_wa = temp_population_below_wa;
+            lhead->population_in_wa = temp_population_in_wa;
+            lhead->population_above_wa = temp_population_above_wa;
+            lhead->next = NULL;
+            ltail = lhead; // For first note head and tail are same
+        }
+        else
+        {
+            // if (i == 1)
+            // {
+            //     _I("    Creating linked list second node");
+            // }
+            // else if (i == 2)
+            // {
+            //     _I("    Creating linked list third node");
+            // }
+            // else
+            // {
+            //     _I("    Creating linked list %ith node", i + 1);
+            // }
+            ltail->next = (llist_t *)malloc(sizeof(llist_t));
+            ltail->next->year = temp_year;
+            ltail->next->city = (char *)malloc(strlen(temp_city) + 1); // allocating X char long string
+            strcpy(ltail->next->city, temp_city);                      // string copy
+            ltail->next->population_total = temp_population_total;
+            ltail->next->population_below_wa = temp_population_below_wa;
+            ltail->next->population_in_wa = temp_population_in_wa;
+            ltail->next->population_above_wa = temp_population_above_wa;
+            ltail->next->next = NULL;
+            ltail = ltail->next; // new tail address
+        }
+        // llist_print_single(ltail); // print out last element of linked list
     }
-
-    /* now we can add a new variable */
-    current->next = (llist_t *)malloc(sizeof(llist_t));
-    current->next->year = 20;
-    //current->next->city = array_city[0];
-    current->next->population_total = 100;
-    current->next->population_below_wa = 50;
-    current->next->population_in_wa = 10;
-    current->next->population_above_wa = 20;
-    current->next->next = NULL;
-    //llist_print_single(lhead->next);
 }
-
-// const char* getfield(char* line, int num)
-// {
-//     const char* tok;
-//     for (tok = strtok(line, ",");
-//             tok && *tok;
-//             tok = strtok(NULL, "\n"))
-//     {
-//         if (!--num)
-//             return tok;
-//     }
-//     return NULL;
-// }
-    
-
-// // Adding an item to the end of the list
-// void push(llist_t * lhead, unsigned year, char *city, unsigned population_total,  unsigned population_below_wa, unsigned population_in_wa, unsigned population_above_wa) {
-//     llist_t * current = lhead;
-//     while (current->next != NULL) {
-//         current = current->next;
-//     }
-
-//     /* now we can add a new variable */
-//     current->next = (llist_t *) malloc(sizeof(llist_t));
-//     current->next->year = year;
-//     current->next->city = city;
-//     current->next->population_total = population_total;
-//     current->next->population_below_wa = population_below_wa;
-//     current->next->population_in_wa = population_in_wa;
-//     current->next->population_above_wa = population_above_wa;
-//     current->next->next = NULL;
-// }
 
 /* @brief Releases the linked structure and the allocated memory associated
  *        with it
@@ -260,7 +217,6 @@ int main(int argc, char *argv[])
 
     char *fname_input;
     FILE *fd_input;
-
 
     /* checking input parameters */
     if (argc < 2)
