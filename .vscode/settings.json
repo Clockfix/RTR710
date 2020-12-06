@@ -9,10 +9,17 @@
         "deque": "c",
         "unordered_map": "c",
         "vector": "c",
-        "initializer_list": "c"
+        "initializer_list": "c",
+        "algorithm": "c"
     },
     "cSpell.words": [
+        "Scity",
+        "Spopulation",
+        "Syear",
+        "lcurrent",
         "lhead",
-        "ltail"
+        "lprev",
+        "ltail",
+        "ltemp"
     ]
 }
