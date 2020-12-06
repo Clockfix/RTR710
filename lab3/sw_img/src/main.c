@@ -94,7 +94,7 @@ int main(int argc, char *argv[]){
     _I("Convert to grayscale: %8u us", timeGray);
     _I("Darkener:             %8u us", timeDarker);
     _I("Horizontal Sobel:     %8u us", timeSobelHor);
-    _I("Verticla Sobel:       %8u us", timeSobelVer);
+    _I("Vertical Sobel:       %8u us", timeSobelVer);
     _I("Median filter:        %8u us", timeMedian);
     _I("Averaging filter:     %8u us", timeAverage);
 

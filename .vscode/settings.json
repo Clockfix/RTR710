@@ -10,16 +10,28 @@
         "unordered_map": "c",
         "vector": "c",
         "initializer_list": "c",
-        "algorithm": "c"
+        "algorithm": "c",
+        "optional": "c",
+        "istream": "c",
+        "ostream": "c",
+        "system_error": "c",
+        "functional": "c",
+        "tuple": "c",
+        "type_traits": "c",
+        "utility": "c"
     },
     "cSpell.words": [
         "Scity",
+        "Sobel",
         "Spopulation",
         "Syear",
+        "coef",
         "lcurrent",
         "lhead",
         "lprev",
         "ltail",
-        "ltemp"
+        "ltemp",
+        "stbi",
+        "tval"
     ]
 }

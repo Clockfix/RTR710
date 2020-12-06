@@ -8,7 +8,6 @@ ps1/quartus_project/output_files
 *.out
 *.o
 *.elf
-.*
 simulation/
 output_files/
 .qsys_edit/
