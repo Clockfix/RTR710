@@ -1,0 +1,145 @@
+# do run_sobelHor.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# ** Warning: (vlib-34) Library already exists at "edi".
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:56:59 on Dec 02,2020
+# vcom -work edi -2008 data_types.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package data_types
+# -- Compiling package body data_types
+# -- Loading package data_types
+# End time: 11:56:59 on Dec 02,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:56:59 on Dec 02,2020
+# vcom -work edi -2008 simulation.vhd -allowProtectedBeforeBody 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Loading package data_types
+# -- Compiling package simulation
+# ** Warning: simulation.vhd(52): (vcom-1257) Shared variable "random" of protected type "random_t" cannot be declared before the protected type body.
+# ** Warning: simulation.vhd(68): (vcom-1135) Subprogram parameter fp is declared using VHDL 1987 syntax.
+# ** Warning: simulation.vhd(69): (vcom-1135) Subprogram parameter fp is declared using VHDL 1987 syntax.
+# ** Warning: simulation.vhd(70): (vcom-1135) Subprogram parameter fp is declared using VHDL 1987 syntax.
+# ** Warning: simulation.vhd(71): (vcom-1135) Subprogram parameter fp is declared using VHDL 1987 syntax.
+# ** Warning: simulation.vhd(72): (vcom-1135) Subprogram parameter fp is declared using VHDL 1987 syntax.
+# ** Warning: simulation.vhd(73): (vcom-1135) Subprogram parameter fp is declared using VHDL 1987 syntax.
+# ** Warning: simulation.vhd(74): (vcom-1135) Subprogram parameter fp is declared using VHDL 1987 syntax.
+# ** Warning: simulation.vhd(75): (vcom-1135) Subprogram parameter fp is declared using VHDL 1987 syntax.
+# ** Warning: simulation.vhd(77): (vcom-1135) Subprogram parameter fp is declared using VHDL 1987 syntax.
+# ** Warning: simulation.vhd(78): (vcom-1135) Subprogram parameter fp is declared using VHDL 1987 syntax.
+# ** Warning: simulation.vhd(79): (vcom-1135) Subprogram parameter fp is declared using VHDL 1987 syntax.
+# -- Compiling package body simulation
+# -- Loading package simulation
+# ** Warning: simulation.vhd(213): (vcom-1135) Subprogram parameter fp is declared using VHDL 1987 syntax.
+# ** Warning: simulation.vhd(222): (vcom-1135) Subprogram parameter fp is declared using VHDL 1987 syntax.
+# ** Warning: simulation.vhd(231): (vcom-1135) Subprogram parameter fp is declared using VHDL 1987 syntax.
+# ** Warning: simulation.vhd(246): (vcom-1135) Subprogram parameter fp is declared using VHDL 1987 syntax.
+# ** Warning: simulation.vhd(268): (vcom-1135) Subprogram parameter fp is declared using VHDL 1987 syntax.
+# ** Warning: simulation.vhd(277): (vcom-1135) Subprogram parameter fp is declared using VHDL 1987 syntax.
+# ** Warning: simulation.vhd(286): (vcom-1135) Subprogram parameter fp is declared using VHDL 1987 syntax.
+# ** Warning: simulation.vhd(299): (vcom-1135) Subprogram parameter fp is declared using VHDL 1987 syntax.
+# ** Warning: simulation.vhd(319): (vcom-1135) Subprogram parameter fp is declared using VHDL 1987 syntax.
+# ** Warning: simulation.vhd(329): (vcom-1135) Subprogram parameter fp is declared using VHDL 1987 syntax.
+# ** Warning: simulation.vhd(339): (vcom-1135) Subprogram parameter fp is declared using VHDL 1987 syntax.
+# ** Warning: simulation.vhd(356): (vcom-1236) Shared variables must be of a protected type.
+# End time: 11:56:59 on Dec 02,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 24
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:56:59 on Dec 02,2020
+# vcom -work work -2008 ../src/data_types.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package data_types
+# -- Compiling package body data_types
+# -- Loading package data_types
+# End time: 11:56:59 on Dec 02,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:56:59 on Dec 02,2020
+# vcom -work work -2008 ../src/components.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package data_types
+# -- Compiling package components
+# -- Compiling package body components
+# -- Loading package components
+# End time: 11:56:59 on Dec 02,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:56:59 on Dec 02,2020
+# vcom -work work -2008 ../src/components.vhd ../src/data_types.vhd ../src/delay_std_logic.vhd ../src/delay_std_logic_vector.vhd ../src/image_darkener.vhd ../src/image_gray.vhd ../src/image_sobelHor.vhd ../src/parallel_output.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package data_types
+# -- Compiling package components
+# -- Compiling package body components
+# -- Loading package components
+# -- Compiling package data_types
+# -- Compiling package body data_types
+# -- Loading package data_types
+# -- Compiling entity delay_std_logic
+# -- Compiling architecture RTL of delay_std_logic
+# -- Loading package data_types
+# -- Compiling entity delay_std_logic_vector
+# -- Compiling architecture RTL of delay_std_logic_vector
+# -- Loading package NUMERIC_STD
+# -- Compiling entity image_darkener
+# -- Compiling architecture RTL of image_darkener
+# -- Compiling entity image_gray
+# -- Compiling architecture RTL of image_gray
+# -- Loading package components
+# -- Compiling entity image_sobelHor
+# -- Compiling architecture RTL of image_sobelHor
+# -- Compiling entity parallel_output
+# -- Compiling architecture RTL of parallel_output
+# End time: 11:57:00 on Dec 02,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:57:00 on Dec 02,2020
+# vcom -work work -2008 image_sobelHor_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Loading package data_types
+# -- Loading package simulation
+# -- Loading package data_types
+# -- Loading package components
+# -- Compiling entity image_sobelHor_tb
+# -- Compiling architecture RTL of image_sobelHor_tb
+# End time: 11:57:00 on Dec 02,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim image_sobelHor_tb 
+# Start time: 11:57:00 on Dec 02,2020
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading edi.data_types(body)
+# Loading edi.simulation(body)
+# Loading work.data_types(body)
+# Loading work.components(body)
+# Loading work.image_sobelhor_tb(rtl)
+# Loading work.image_sobelhor(rtl)
+# Loading work.delay_std_logic_vector(rtl)
+# ** Warning: (vsim-8683) Uninitialized out port /image_sobelhor_tb/DUT/ast_in_ready has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /image_sobelhor_tb/DUT/ast_out_valid has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /image_sobelhor_tb/DUT/ast_out_data(7 downto 0) has no driver.
+# This port will contribute value (UUUUUUUU) to the signal network.
+# ** Error: FAILURE! (timeout, check if control signals are correctly connected)
+#    Time: 1015 ns  Iteration: 1  Instance: /image_sobelhor_tb
+# End time: 11:57:00 on Dec 02,2020, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 3
