@@ -8,7 +8,7 @@ ENTITY lab IS
         writereq : IN STD_LOGIC;
         address : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
         writedata : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-        -- outputs for 7segment displayes
+        -- outputs for 7segment displays
         val0 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
         val1 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
         val2 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
