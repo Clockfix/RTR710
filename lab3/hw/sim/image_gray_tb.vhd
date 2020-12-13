@@ -74,9 +74,9 @@ begin
 			v_timeout := 0;
 
             -- update output vector
-            v_r := to_integer(unsigned(ast_in_data_delayed(23 downto 17)));
-            v_g := to_integer(unsigned(ast_in_data_delayed(15 downto 10)))
-                 + to_integer(unsigned(ast_in_data_delayed(15 downto 11)));
+            v_r := to_integer(unsigned(ast_in_data_delayed(23 downto 18)))
+                + to_integer(unsigned(ast_in_data_delayed(23 downto 19)));
+            v_g := to_integer(unsigned(ast_in_data_delayed(15 downto 9)));
             v_b := to_integer(unsigned(ast_in_data_delayed(7 downto 3)));
             v_gray := v_r + v_g + v_b;
 
