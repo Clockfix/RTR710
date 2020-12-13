@@ -151,7 +151,7 @@ int image_sobelHor(image_t *imageOut, image_t *imageIn)
      * Afterwards add an offset of 128, make sure that overflows are dealt 
      * with 
      */
-    signed char coef_one, coef_three;
+    signed int coef_one, coef_three;
     for (int h = 0; h < imageIn->height; h++)
     {
         for (int w = 0; w < imageIn->width; w++)
@@ -160,18 +160,28 @@ int image_sobelHor(image_t *imageOut, image_t *imageIn)
             {
                 coef_one = imageIn->data[w + h * imageIn->width - 0] * (-1);
                 coef_three = imageIn->data[w + h * imageIn->width + 2] * 1;
-                imageOut->data[w + h * imageIn->width] = coef_one + coef_three + 128;
             }
             else if (w == imageIn->width - 1)
             {
                 coef_one = imageIn->data[w + h * imageIn->width - 2] * (-1);
                 coef_three = imageIn->data[w + h * imageIn->width + 0] * 1;
-                imageOut->data[w + h * imageIn->width] = coef_one + coef_three + 128;
             }
             else
             {
                 coef_one = imageIn->data[w + h * imageIn->width - 1] * (-1);
                 coef_three = imageIn->data[w + h * imageIn->width + 1] * 1;
+            }
+            // saving result in output image  + handling overflow
+            if (coef_one + coef_three > 127)
+            {
+                imageOut->data[w + h * imageIn->width] = 255;
+            }
+            else if (coef_one + coef_three < -128)
+            {
+                imageOut->data[w + h * imageIn->width] = 0;
+            }
+            else
+            {
                 imageOut->data[w + h * imageIn->width] = coef_one + coef_three + 128;
             }
         }
@@ -200,7 +210,7 @@ int image_sobelVer(image_t *imageOut, image_t *imageIn)
      * with 
      */
 
-    signed char coef_one, coef_three;
+    signed int coef_one, coef_three;
     for (int h = 0; h < imageIn->height; h++)
     {
         for (int w = 0; w < imageIn->width; w++)
@@ -209,18 +219,28 @@ int image_sobelVer(image_t *imageOut, image_t *imageIn)
             {
                 coef_one = imageIn->data[w + (h - 0) * imageIn->width] * (-1);
                 coef_three = imageIn->data[w + (h + 2) * imageIn->width] * 1;
-                imageOut->data[w + h * imageIn->width] = coef_one + coef_three + 128;
             }
             else if (h == imageIn->height - 1)
             {
                 coef_one = imageIn->data[w + (h - 2) * imageIn->width] * (-1);
                 coef_three = imageIn->data[w + (h + 0) * imageIn->width] * 1;
-                imageOut->data[w + h * imageIn->width] = coef_one + coef_three + 128;
             }
             else
             {
                 coef_one = imageIn->data[w + (h - 1) * imageIn->width] * (-1);
                 coef_three = imageIn->data[w + (h + 1) * imageIn->width] * 1;
+            }
+            // saving result in output image  + handling overflow
+            if (coef_one + coef_three > 127)
+            {
+                imageOut->data[w + h * imageIn->width] = 255;
+            }
+            else if (coef_one + coef_three < -128)
+            {
+                imageOut->data[w + h * imageIn->width] = 0;
+            }
+            else
+            {
                 imageOut->data[w + h * imageIn->width] = coef_one + coef_three + 128;
             }
         }
@@ -307,7 +327,7 @@ int image_averagingFilter(image_t *imageOut, image_t *imageIn)
      * the overflows are dealt with. */
 
     unsigned int data = 0;
-    uint8_t value;
+    unsigned int value;
     // value = image_getMedian(data, 9);
     // _I("median is %i",value);
     for (int h = 0; h < imageIn->height; h++)
@@ -328,7 +348,13 @@ int image_averagingFilter(image_t *imageOut, image_t *imageIn)
                     }
                 }
                 value = data / 9;
-                imageOut->data[w + h * imageIn->width] = value;
+                // handling overflow
+                if (value < 256){ 
+                    imageOut->data[w + h * imageIn->width] = value;
+                } else {
+                   imageOut->data[w + h * imageIn->width] = 255; 
+                   // _I("Was overflow");
+                }
                 data = 0;
             }
         }
