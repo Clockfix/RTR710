@@ -32,6 +32,8 @@
         "ltail",
         "ltemp",
         "stbi",
-        "tval"
+        "tval",
+        "writedata",
+        "writereq"
     ]
 }
