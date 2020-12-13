@@ -33,7 +33,11 @@
         "ltemp",
         "stbi",
         "tval",
+        "vlib",
         "writedata",
         "writereq"
+    ],
+    "grammarly.userWords": [
+        "vlib"
     ]
 }

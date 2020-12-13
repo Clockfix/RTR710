@@ -43,6 +43,9 @@ ARCHITECTURE RTL OF image_gray IS
 
     -- valid shift registers
     SIGNAL r_valid_one, r_valid_two, r_valid_three, r_valid_four : STD_LOGIC := '0';
+
+
+
 BEGIN
     -- inputs
     enable <= ast_out_ready;
@@ -116,7 +119,7 @@ BEGIN
 
     -- outputs
 
-    ast_in_ready <= enable;
+    ast_in_ready <=  enable;
     ast_out_valid <= r_valid_four;
     ast_out_data <= STD_LOGIC_VECTOR(r_gray_out_reg);
 
