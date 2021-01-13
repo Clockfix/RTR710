@@ -1,20 +1,20 @@
-# do run_sobelHor.do
+# do run_gray.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # ** Warning: (vlib-34) Library already exists at "edi".
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:56:59 on Dec 02,2020
-# vcom -work edi -2008 data_types.vhd 
+# Start time: 20:12:04 on Dec 14,2020
+# vcom -reportprogress 300 -work edi -2008 data_types.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling package data_types
 # -- Compiling package body data_types
 # -- Loading package data_types
-# End time: 11:56:59 on Dec 02,2020, Elapsed time: 0:00:00
+# End time: 20:12:04 on Dec 14,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:56:59 on Dec 02,2020
-# vcom -work edi -2008 simulation.vhd -allowProtectedBeforeBody 
+# Start time: 20:12:04 on Dec 14,2020
+# vcom -reportprogress 300 -work edi -2008 simulation.vhd -allowProtectedBeforeBody 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -48,22 +48,22 @@
 # ** Warning: simulation.vhd(329): (vcom-1135) Subprogram parameter fp is declared using VHDL 1987 syntax.
 # ** Warning: simulation.vhd(339): (vcom-1135) Subprogram parameter fp is declared using VHDL 1987 syntax.
 # ** Warning: simulation.vhd(356): (vcom-1236) Shared variables must be of a protected type.
-# End time: 11:56:59 on Dec 02,2020, Elapsed time: 0:00:00
+# End time: 20:12:04 on Dec 14,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 24
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:56:59 on Dec 02,2020
-# vcom -work work -2008 ../src/data_types.vhd 
+# Start time: 20:12:04 on Dec 14,2020
+# vcom -reportprogress 300 -work work -2008 ../src/data_types.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling package data_types
 # -- Compiling package body data_types
 # -- Loading package data_types
-# End time: 11:56:59 on Dec 02,2020, Elapsed time: 0:00:00
+# End time: 20:12:04 on Dec 14,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:56:59 on Dec 02,2020
-# vcom -work work -2008 ../src/components.vhd 
+# Start time: 20:12:04 on Dec 14,2020
+# vcom -reportprogress 300 -work work -2008 ../src/components.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -71,11 +71,11 @@
 # -- Compiling package components
 # -- Compiling package body components
 # -- Loading package components
-# End time: 11:56:59 on Dec 02,2020, Elapsed time: 0:00:00
+# End time: 20:12:04 on Dec 14,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:56:59 on Dec 02,2020
-# vcom -work work -2008 ../src/components.vhd ../src/data_types.vhd ../src/delay_std_logic.vhd ../src/delay_std_logic_vector.vhd ../src/image_darkener.vhd ../src/image_gray.vhd ../src/image_sobelHor.vhd ../src/parallel_output.vhd 
+# Start time: 20:12:04 on Dec 14,2020
+# vcom -reportprogress 300 -work work -2008 ../src/components.vhd ../src/data_types.vhd ../src/delay_std_logic.vhd ../src/delay_std_logic_vector.vhd ../src/image_darkener.vhd ../src/image_gray.vhd ../src/image_sobelHor.vhd ../src/parallel_output.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -101,11 +101,11 @@
 # -- Compiling architecture RTL of image_sobelHor
 # -- Compiling entity parallel_output
 # -- Compiling architecture RTL of parallel_output
-# End time: 11:57:00 on Dec 02,2020, Elapsed time: 0:00:01
+# End time: 20:12:04 on Dec 14,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:57:00 on Dec 02,2020
-# vcom -work work -2008 image_sobelHor_tb.vhd 
+# Start time: 20:12:04 on Dec 14,2020
+# vcom -reportprogress 300 -work work -2008 image_gray_tb.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -115,12 +115,12 @@
 # -- Loading package simulation
 # -- Loading package data_types
 # -- Loading package components
-# -- Compiling entity image_sobelHor_tb
-# -- Compiling architecture RTL of image_sobelHor_tb
-# End time: 11:57:00 on Dec 02,2020, Elapsed time: 0:00:00
+# -- Compiling entity image_gray_tb
+# -- Compiling architecture RTL of image_gray_tb
+# End time: 20:12:04 on Dec 14,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vsim image_sobelHor_tb 
-# Start time: 11:57:00 on Dec 02,2020
+# vsim image_gray_tb 
+# Start time: 20:12:04 on Dec 14,2020
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -130,16 +130,15 @@
 # Loading edi.simulation(body)
 # Loading work.data_types(body)
 # Loading work.components(body)
-# Loading work.image_sobelhor_tb(rtl)
-# Loading work.image_sobelhor(rtl)
+# Loading work.image_gray_tb(rtl)
+# Loading work.image_gray(rtl)
 # Loading work.delay_std_logic_vector(rtl)
-# ** Warning: (vsim-8683) Uninitialized out port /image_sobelhor_tb/DUT/ast_in_ready has no driver.
-# This port will contribute value (U) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /image_sobelhor_tb/DUT/ast_out_valid has no driver.
-# This port will contribute value (U) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /image_sobelhor_tb/DUT/ast_out_data(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-# ** Error: FAILURE! (timeout, check if control signals are correctly connected)
-#    Time: 1015 ns  Iteration: 1  Instance: /image_sobelhor_tb
-# End time: 11:57:00 on Dec 02,2020, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 3
+# ** Note: INPUT: 199,14,153,; EXPECTED: 99; GOT: 131
+#    Time: 75 ns  Iteration: 1  Instance: /image_gray_tb
+# ** Failure: Test failed!
+#    Time: 75 ns  Iteration: 1  Process: /image_gray_tb/line__62 File: image_gray_tb.vhd
+# Break in Process line__62 at image_gray_tb.vhd line 97
+# 0 ps
+# 78750 ps
+# End time: 20:23:39 on Dec 14,2020, Elapsed time: 0:11:35
+# Errors: 1, Warnings: 0

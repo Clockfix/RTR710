@@ -12,9 +12,9 @@ d/home/rihards/life/projects/RTU_SoC/5_image_processing/hw/sim
 Pdata_types
 Z0 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z1 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 34
+!i122 102
 Z2 w1603731116
-Z3 d/home/rihards/projects/teaching/courses/soc/lab3_image_processing/hw/sim
+Z3 d/home/imants/programs/git/RTR710/lab3/hw/sim
 Z4 8data_types.vhd
 Z5 Fdata_types.vhd
 l0
@@ -24,10 +24,10 @@ V6WOl71`Y^m^10cEgEbR[B0
 Z6 OV;C;2020.1;71
 33
 b1
-Z7 !s110 1606903019
+Z7 !s110 1607969524
 !i10b 1
-Z8 !s108 1606903019.000000
-Z9 !s90 -work|edi|-2008|data_types.vhd|
+Z8 !s108 1607969524.000000
+Z9 !s90 -reportprogress|300|-work|edi|-2008|data_types.vhd|
 Z10 !s107 data_types.vhd|
 !i113 1
 Z11 o-work edi -2008
@@ -36,7 +36,7 @@ Bbody
 DPx4 work 10 data_types 0 22 6WOl71`Y^m^10cEgEbR[B0
 R0
 R1
-!i122 34
+!i122 102
 l0
 L54 1
 VWFgk7Mh@?oFRZ>e^B3[:h0
@@ -57,7 +57,7 @@ Z14 DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
 Z15 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 R0
 R1
-!i122 35
+!i122 103
 R2
 R3
 Z16 8simulation.vhd
@@ -72,7 +72,7 @@ b1
 R7
 !i10b 1
 R8
-Z18 !s90 -work|edi|-2008|simulation.vhd|-allowProtectedBeforeBody|
+Z18 !s90 -reportprogress|300|-work|edi|-2008|simulation.vhd|-allowProtectedBeforeBody|
 Z19 !s107 simulation.vhd|
 !i113 1
 Z20 o-work edi -2008 -allowProtectedBeforeBody
@@ -84,7 +84,7 @@ R14
 R15
 R0
 R1
-!i122 35
+!i122 103
 l0
 Z22 L87 1
 Z23 V0O^Nn`?A9`F;cEGn:3NI70
