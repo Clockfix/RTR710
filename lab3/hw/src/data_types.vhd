@@ -1,12 +1,12 @@
 -- synopsis directives:
 -- synthesis VHDL_INPUT_VERSION VHDL_2008
 
-library ieee;
-use ieee.std_logic_1164.all;
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
 
-package data_types is
-	type aslv is array(natural range <>) of std_logic_vector;
-end package;
+PACKAGE data_types IS
+	TYPE aslv IS ARRAY(NATURAL RANGE <>) OF STD_LOGIC_VECTOR;
+END PACKAGE;
 
-package body data_types is
-end package body;
+PACKAGE BODY data_types IS
+END PACKAGE BODY;

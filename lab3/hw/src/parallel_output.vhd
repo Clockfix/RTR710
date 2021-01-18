@@ -1,55 +1,51 @@
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
-use work.data_types.all;
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL;
+USE work.data_types.ALL;
+ENTITY parallel_output IS
+	GENERIC (
+		DATA_WIDTH : NATURAL := 8;
+		VECTOR_SIZE : NATURAL := 3
+	);
+	PORT (
+		clk : IN STD_LOGIC;
+		reset : IN STD_LOGIC;
+		enable : IN STD_LOGIC;
+		data_in : IN STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
+		data_out : OUT aslv(0 TO VECTOR_SIZE - 1)(DATA_WIDTH - 1 DOWNTO 0)
+	);
+END ENTITY;
+ARCHITECTURE RTL OF parallel_output IS
+	SIGNAL data_reg, data_next : aslv(0 TO VECTOR_SIZE - 1)(DATA_WIDTH - 1 DOWNTO 0) := (OTHERS => (OTHERS => '0'));
+BEGIN
 
-
-entity parallel_output is
-    generic(
-        DATA_WIDTH  : natural := 8;
-        VECTOR_SIZE : natural := 3
-    );
-    port(
-        clk           : in std_logic;
-        reset         : in std_logic;
-        enable        : in std_logic;
-        data_in       : in std_logic_vector(DATA_WIDTH-1 downto 0);
-        data_out      : out aslv(0 to VECTOR_SIZE-1)(DATA_WIDTH-1 downto 0)
-    );
-end entity;
-
-
-architecture RTL of parallel_output is
-    signal data_reg, data_next : aslv(0 to VECTOR_SIZE-1)(DATA_WIDTH-1 downto 0) := (others => (others => '0'));
-begin
- 
 	-- reg state logic
-	process(clk,reset)
-	begin
-		if reset = '1' then
-			data_reg 	<= (others => (others => '0'));
-		else
-			if rising_edge(clk) then
-				if enable = '1' then
-					data_reg 	<= data_next;
-				else
-					data_reg 	<= data_reg;
-				end if;
-			end if;
-		end if;
-	end process;
+	PROCESS (clk, reset)
+	BEGIN
+		IF reset = '1' THEN
+			data_reg <= (OTHERS => (OTHERS => '0'));
+		ELSE
+			IF rising_edge(clk) THEN
+				IF enable = '1' THEN
+					data_reg <= data_next;
+				ELSE
+					data_reg <= data_reg;
+				END IF;
+			END IF;
+		END IF;
+	END PROCESS;
 
 	-- next state logic
-	GENERATE_VECTOR: for i in 0 to VECTOR_SIZE-1 generate 
-		INPUT_REGISTER: if i=0 generate
+	GENERATE_VECTOR : FOR i IN 0 TO VECTOR_SIZE - 1 GENERATE
+		INPUT_REGISTER : IF i = 0 GENERATE
 			data_next(i) <= data_in;
-		end generate INPUT_REGISTER;
+		END GENERATE INPUT_REGISTER;
 
-		OTHER_REGISTERS: if i>0 generate
-			data_next(i) <= data_reg(i-1);
-		end generate OTHER_REGISTERS;
-	end generate GENERATE_VECTOR;
+		OTHER_REGISTERS : IF i > 0 GENERATE
+			data_next(i) <= data_reg(i - 1);
+		END GENERATE OTHER_REGISTERS;
+	END GENERATE GENERATE_VECTOR;
 
 	-- paralel outputs
 	data_out <= data_reg;
-end architecture;
+END ARCHITECTURE;

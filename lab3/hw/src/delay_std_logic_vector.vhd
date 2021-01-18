@@ -1,67 +1,61 @@
 -- synthesis VHDL_INPUT_VERSION VHDL_2008
 
-library ieee;
-use ieee.std_logic_1164.all;
-use work.data_types.all;
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE work.data_types.ALL;
 
-entity delay_std_logic_vector is
-	generic
-	(
-		DELAY_COUNT : natural := 1
+ENTITY delay_std_logic_vector IS
+	GENERIC (
+		DELAY_COUNT : NATURAL := 1
 	);
-	port
-	(
-		clk				: in  std_logic;
-		reset			: in  std_logic;
-		enable 			: in  std_logic;
-		sig_in  		: in  std_logic_vector;
-		sig_out 		: out std_logic_vector
+	PORT (
+		clk : IN STD_LOGIC;
+		reset : IN STD_LOGIC;
+		enable : IN STD_LOGIC;
+		sig_in : IN STD_LOGIC_VECTOR;
+		sig_out : OUT STD_LOGIC_VECTOR
 	);
-end entity;
+END ENTITY;
+ARCHITECTURE RTL OF delay_std_logic_vector IS
+	SIGNAL delay_reg, delay_next : aslv(0 TO DELAY_COUNT - 1)(sig_in'RANGE) := (OTHERS => (OTHERS => '0'));
+BEGIN
 
+	GENERATE_LOGIC : IF DELAY_COUNT > 0 GENERATE
 
-architecture RTL of delay_std_logic_vector is
-	signal delay_reg, delay_next : aslv(0 to DELAY_COUNT-1)(sig_in'range) := (others => (others => '0'));
-begin
-
-	GENERATE_LOGIC: if DELAY_COUNT > 0 generate
-		
 		-- reg state logic
-		process(clk,reset,enable)
-		begin
-			if reset = '1' then
-				delay_reg <= (others => (others => '0'));
-			else
-				if clk'event and clk = '1' then
-					if enable = '1' then
+		PROCESS (clk, reset, enable)
+		BEGIN
+			IF reset = '1' THEN
+				delay_reg <= (OTHERS => (OTHERS => '0'));
+			ELSE
+				IF clk'event AND clk = '1' THEN
+					IF enable = '1' THEN
 						delay_reg <= delay_next;
-					else
+					ELSE
 						delay_reg <= delay_reg;
-					end if;
-				end if;
-			end if;
-		end process;
+					END IF;
+				END IF;
+			END IF;
+		END PROCESS;
 
 		-- next state logic
-		process(all)
-		begin
-			for i in 0 to DELAY_COUNT-1 loop 
-				if i = 0 then
+		PROCESS (ALL)
+		BEGIN
+			FOR i IN 0 TO DELAY_COUNT - 1 LOOP
+				IF i = 0 THEN
 					delay_next(i) <= sig_in;
-				else
-					delay_next(i) <= delay_reg(i-1);
-				end if;
-			end loop;
-		end process;
+				ELSE
+					delay_next(i) <= delay_reg(i - 1);
+				END IF;
+			END LOOP;
+		END PROCESS;
 
 		-- outputs
-		sig_out <= delay_reg(DELAY_COUNT-1);
-	end generate GENERATE_LOGIC;
-
-
-	GENERATE_NO_LOGIC: if DELAY_COUNT = 0 generate
+		sig_out <= delay_reg(DELAY_COUNT - 1);
+	END GENERATE GENERATE_LOGIC;
+	GENERATE_NO_LOGIC : IF DELAY_COUNT = 0 GENERATE
 		-- outputs
 		sig_out <= sig_in;
-	end generate GENERATE_NO_LOGIC;
+	END GENERATE GENERATE_NO_LOGIC;
 
-end architecture;
+END ARCHITECTURE;

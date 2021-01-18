@@ -44,8 +44,6 @@ ARCHITECTURE RTL OF image_gray IS
     -- valid shift registers
     SIGNAL r_valid_one, r_valid_two, r_valid_three : STD_LOGIC := '0';
 
-
-
 BEGIN
     -- inputs
     enable <= ast_out_ready;
@@ -107,19 +105,19 @@ BEGIN
     -- r_green_in_next <= unsigned(ast_in_data(15 DOWNTO 8));
     -- r_blue_in_next <= unsigned(ast_in_data(7 DOWNTO 0));
     -- shift registers
-    r_red_shift_one_next <= to_unsigned(to_integer(unsigned(ast_in_data(23 downto 18))),8); -- /4
-    r_red_shift_two_next <= to_unsigned(to_integer(unsigned(ast_in_data(23 downto 19))),8); -- /8
-    r_green_shift_next <= to_unsigned(to_integer(unsigned(ast_in_data(15 DOWNTO 9))),8); -- /2
-    r_blue_shift_next <= to_unsigned(to_integer(unsigned(ast_in_data(7 DOWNTO 3))),8); -- /8
+    r_red_shift_one_next <= to_unsigned(to_integer(unsigned(ast_in_data(23 DOWNTO 18))), 8); -- /4
+    r_red_shift_two_next <= to_unsigned(to_integer(unsigned(ast_in_data(23 DOWNTO 19))), 8); -- /8
+    r_green_shift_next <= to_unsigned(to_integer(unsigned(ast_in_data(15 DOWNTO 9))), 8); -- /2
+    r_blue_shift_next <= to_unsigned(to_integer(unsigned(ast_in_data(7 DOWNTO 3))), 8); -- /8
     -- sum registers
-    r_red_sum_next <= to_unsigned((to_integer(r_red_shift_one_reg) + to_integer(r_red_shift_two_reg)),8); -- red
-    r_green_blue_sum_next <= to_unsigned((to_integer(r_blue_shift_reg) + to_integer(r_green_shift_reg)),8); -- blue + green
+    r_red_sum_next <= to_unsigned((to_integer(r_red_shift_one_reg) + to_integer(r_red_shift_two_reg)), 8); -- red
+    r_green_blue_sum_next <= to_unsigned((to_integer(r_blue_shift_reg) + to_integer(r_green_shift_reg)), 8); -- blue + green
     -- output registers
-    r_gray_out_next <= to_unsigned((to_integer(r_red_sum_reg) + to_integer(r_green_blue_sum_reg)),8); -- gray
+    r_gray_out_next <= to_unsigned((to_integer(r_red_sum_reg) + to_integer(r_green_blue_sum_reg)), 8); -- gray
 
     -- outputs
 
-    ast_in_ready <=  enable;
+    ast_in_ready <= enable;
     ast_out_valid <= r_valid_three;
     ast_out_data <= STD_LOGIC_VECTOR(r_gray_out_reg);
 

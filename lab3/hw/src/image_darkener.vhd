@@ -66,9 +66,9 @@ BEGIN
     -- output registers
     r_out_next <= (OTHERS => '0') WHEN (to_integer(unsigned(ast_in_data(7 DOWNTO 0))) < DARKENER_CONSTANT)
         ELSE
-         to_unsigned(to_integer(unsigned(ast_in_data(7 DOWNTO 0))) - 20, 8);
+        to_unsigned(to_integer(unsigned(ast_in_data(7 DOWNTO 0))) - 20, 8);
     -- outputs
     ast_out_valid <= r_valid_one;
     ast_in_ready <= enable;
-    ast_out_data <= std_logic_vector(r_out_reg);
+    ast_out_data <= STD_LOGIC_VECTOR(r_out_reg);
 END ARCHITECTURE;

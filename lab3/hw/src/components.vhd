@@ -1,103 +1,99 @@
 -- synopsis directives:
 -- synthesis VHDL_INPUT_VERSION VHDL_2008
 
-library ieee;
-use ieee.std_logic_1164.all,
-	work.data_types.all;
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL,
+work.data_types.ALL;
 
-package components is
-    component delay_std_logic is
-	generic
-	(
-		DELAY_COUNT : natural := 1
-	);
-	port
-	(
-		clk     : in  std_logic;
-		reset   : in  std_logic;
-		enable  : in  std_logic;
-		sig_in  : in  std_logic;
-		sig_out : out std_logic
-	);
-    end component;
+PACKAGE components IS
+    COMPONENT delay_std_logic IS
+        GENERIC (
+            DELAY_COUNT : NATURAL := 1
+        );
+        PORT (
+            clk : IN STD_LOGIC;
+            reset : IN STD_LOGIC;
+            enable : IN STD_LOGIC;
+            sig_in : IN STD_LOGIC;
+            sig_out : OUT STD_LOGIC
+        );
+    END COMPONENT;
 
-    component parallel_output is
-    generic(
-        DATA_WIDTH  : natural := 8;
-        VECTOR_SIZE : natural := 3
-    );
-    port(
-        clk           : in std_logic;
-        reset         : in std_logic;
-        enable        : in std_logic;
-        data_in       : in std_logic_vector(DATA_WIDTH-1 downto 0);
-        data_out      : out aslv(0 to VECTOR_SIZE-1)(DATA_WIDTH-1 downto 0)
-    );
-    end component;
+    COMPONENT parallel_output IS
+        GENERIC (
+            DATA_WIDTH : NATURAL := 8;
+            VECTOR_SIZE : NATURAL := 3
+        );
+        PORT (
+            clk : IN STD_LOGIC;
+            reset : IN STD_LOGIC;
+            enable : IN STD_LOGIC;
+            data_in : IN STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
+            data_out : OUT aslv(0 TO VECTOR_SIZE - 1)(DATA_WIDTH - 1 DOWNTO 0)
+        );
+    END COMPONENT;
 
-    component image_darkener is
-    generic(
-        DARKENER_CONSTANT : natural := 20
-    );
-    port(
-        clk           : in std_logic;
-        reset         : in std_logic;
-        -- Avalon-ST (input)
-        ast_in_valid  : in  std_logic;
-        ast_in_data   : in  std_logic_vector(7 downto 0);
-        ast_in_ready  : out std_logic;
-        -- Avalon-ST (output)
-        ast_out_valid : out std_logic;
-        ast_out_data  : out std_logic_vector(7 downto 0);
-        ast_out_ready : in  std_logic
-    );
-    end component;
+    COMPONENT image_darkener IS
+        GENERIC (
+            DARKENER_CONSTANT : NATURAL := 20
+        );
+        PORT (
+            clk : IN STD_LOGIC;
+            reset : IN STD_LOGIC;
+            -- Avalon-ST (input)
+            ast_in_valid : IN STD_LOGIC;
+            ast_in_data : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+            ast_in_ready : OUT STD_LOGIC;
+            -- Avalon-ST (output)
+            ast_out_valid : OUT STD_LOGIC;
+            ast_out_data : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+            ast_out_ready : IN STD_LOGIC
+        );
+    END COMPONENT;
 
-    component delay_std_logic_vector is
-	generic
-	(
-		DELAY_COUNT : natural := 1
-	);
-	port
-	(
-		clk				: in  std_logic;
-		reset			: in  std_logic;
-		enable 			: in  std_logic;
-		sig_in  		: in  std_logic_vector;
-		sig_out 		: out std_logic_vector
-	);
-    end component;
+    COMPONENT delay_std_logic_vector IS
+        GENERIC (
+            DELAY_COUNT : NATURAL := 1
+        );
+        PORT (
+            clk : IN STD_LOGIC;
+            reset : IN STD_LOGIC;
+            enable : IN STD_LOGIC;
+            sig_in : IN STD_LOGIC_VECTOR;
+            sig_out : OUT STD_LOGIC_VECTOR
+        );
+    END COMPONENT;
 
-    component image_gray is
-    port(
-        clk           : in std_logic;
-        reset         : in std_logic;
-        -- Avalon-ST (input)
-        ast_in_valid  : in  std_logic;
-        ast_in_data   : in  std_logic_vector(23 downto 0); -- r,g,b
-        ast_in_ready  : out std_logic;
-        -- Avalon-ST (output)
-        ast_out_valid : out std_logic;
-        ast_out_data  : out std_logic_vector(7 downto 0);
-        ast_out_ready : in  std_logic
-    );
-    end component;
+    COMPONENT image_gray IS
+        PORT (
+            clk : IN STD_LOGIC;
+            reset : IN STD_LOGIC;
+            -- Avalon-ST (input)
+            ast_in_valid : IN STD_LOGIC;
+            ast_in_data : IN STD_LOGIC_VECTOR(23 DOWNTO 0); -- r,g,b
+            ast_in_ready : OUT STD_LOGIC;
+            -- Avalon-ST (output)
+            ast_out_valid : OUT STD_LOGIC;
+            ast_out_data : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+            ast_out_ready : IN STD_LOGIC
+        );
+    END COMPONENT;
 
-    component image_sobelHor is
-    port(
-        clk           : in std_logic;
-        reset         : in std_logic;
-        -- Avalon-ST (input)
-        ast_in_valid  : in  std_logic;
-        ast_in_data   : in  std_logic_vector(7 downto 0);
-        ast_in_ready  : out std_logic;
-        -- Avalon-ST (output)
-        ast_out_valid : out std_logic;
-        ast_out_data  : out std_logic_vector(7 downto 0);
-        ast_out_ready : in  std_logic
-    );
-    end component;
-end package;
+    COMPONENT image_sobelHor IS
+        PORT (
+            clk : IN STD_LOGIC;
+            reset : IN STD_LOGIC;
+            -- Avalon-ST (input)
+            ast_in_valid : IN STD_LOGIC;
+            ast_in_data : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+            ast_in_ready : OUT STD_LOGIC;
+            -- Avalon-ST (output)
+            ast_out_valid : OUT STD_LOGIC;
+            ast_out_data : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+            ast_out_ready : IN STD_LOGIC
+        );
+    END COMPONENT;
+END PACKAGE;
 
-package body components is
-end package body;
+PACKAGE BODY components IS
+END PACKAGE BODY;
