@@ -1,0 +1,23 @@
+#+TITLE: Evaluation summary of student HW problem set submission
+
+* Soft deadline
+|----------+-----+-----+-----+-------------------------------------------------|
+| Student  | ch1 | ch2 | ch3 | Notes                                           |
+|----------+-----+-----+-----+-------------------------------------------------|
+| Imants   | 2.5 | 3.5 |   5 | CH1: Free on line 85 is incorrect, the          |
+|          |     |     |     | variable "wr" is allocated on the stack         |
+|          |     |     |     | CH2: Interesting approach for the averaging     |
+|          |     |     |     | filter, although readability could be improved  |
+|          |     |     |     | The median filter implementation is incorrect,  |
+|          |     |     |     | in fact your error metrics for both filters     |
+|          |     |     |     | are practically the same and reason for that is |
+|          |     |     |     | that in your medium filter implementation you   |
+|          |     |     |     | practically process only the beginning and end  |
+|          |     |     |     | of the signal, check the use of sample_count    |
+|          |     |     |     | variable. Additionally I would encourage you    |
+|          |     |     |     | to structure your code using *_single           |
+|          |     |     |     | functions. Furthermore, if you use "inline" key |
+|          |     |     |     | word, there is no performance penalty.          |
+|          |     |     |     | CH3: Really nice, no memory leaks. You could    |
+|          |     |     |     | try using sscanf function.                      |
+|----------+-----+-----+-----+-------------------------------------------------|

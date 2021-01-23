@@ -82,8 +82,11 @@ int main(int argc, char *argv[])
     int wr;
     wr = fwrite(string, 1, fsize, w);
     free(string);
-    free(wr);
-
+    // free(wr);    //  Coment: Free on line 85 is incorrect, the variable "wr" is allocated on the stack
+                    //*************************************************************  
+                    //  Memory for wr is allocated in the main's call stack frame 
+                    //  and will be released as soon as main returns.
+                    //**************************************************************
     _I("Closing files");
     /* your code goes here */
     fclose(f);

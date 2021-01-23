@@ -69,6 +69,12 @@ void filter_average(float *output, float *input, unsigned sample_count, unsigned
         else
         {
             output[i] = output[i - 1] + ((input[i + n] - input[i - n - 1]) / filter_length);
+            //**********************************************************************
+            //      aver[x]   = src[x-1]  +    src[x] +    src[x+1]
+            //      aver[x+1] =                src[x] +    src[x+1]   +  src[x+2]
+            // then:
+            //      aver[x+1] = -src[x-1] +         aver[x]           +  src[x+2]
+            //*********************************************************************
             // printf("i+n=%d ",(i+n));
             // printf("i-n=%d \n",(i-n));
         }
@@ -117,13 +123,14 @@ void filter_median(float *output, float *input, unsigned sample_count, unsigned 
     }
     float array[filter_length];
     float temp;
-    for (int i = n; i < n + 1; i++)
+    for (int i = n; i < sample_count - n + 1; i++)
     {
         for (int l = 0; l < filter_length; l++)
         {
             array[l] = input[i - n + l];
             // printf("%f\n ", array[l]);
         }
+        // set vector array in order
         for (int l = 0; l < filter_length - 1; l++)
         {
             for (int k = 0; k < filter_length - l - 1; k++)
@@ -132,18 +139,23 @@ void filter_median(float *output, float *input, unsigned sample_count, unsigned 
                 {
                     temp = array[k];
                     array[k] = array[k + 1];
-                    array[k + 1] =temp;
+                    array[k + 1] = temp;
                 }
                 // printf("%f\n ", array[l]);
             }
             // printf("%f\n ", array[l]);
         }
-        // for (int l = 0; l < filter_length; l++)
+        // if (filter_length == 5)
         // {
-        //     printf("%f\n ", array[l]);
+        //     for (int l = 0; l < filter_length; l++)
+        //     {
+        //         printf("array=");
+        //         printf(" %f", array[l]);
+        //         printf("\n");
+        //     }
+        //     printf("Median result = %f\n ", array[n]);
         // }
         output[i] = array[n];
-        // printf("output = %f\n ", output[i]);
     }
 
     // handling last data points. From task description --> for this course, you can leave edges non filtered.
@@ -279,7 +291,7 @@ int main(int argc, char *argv[])
     }
 
     _I("Saving filtered result at filter length 5");
-    filter_average(signal_output, signal_input, sample_count, 5);
+    filter_median(signal_output, signal_input, sample_count, 5);
     for (i = 0; i < sample_count; i++)
     {
         fprintf(fd_output, "%f\n", signal_output[i]);
