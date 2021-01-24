@@ -32,7 +32,7 @@ begin
         ast_out_valid, ast_out_data, ast_out_ready);
 
     DELAY_INPUT: delay_std_logic_vector
-    generic map(2)
+    generic map(1)
     port map(clk, reset, ast_in_ready, ast_in_data, ast_in_data_delayed);
 
     -- clock

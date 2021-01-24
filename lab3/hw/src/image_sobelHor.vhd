@@ -19,28 +19,61 @@ ENTITY image_sobelHor IS
 END ENTITY;
 
 ARCHITECTURE RTL OF image_sobelHor IS
-    SIGNAL enable : STD_LOGIC;
+    SIGNAL w_valid_enable, w_data_enable, w_enable : STD_LOGIC; -- enable wire for registers
+    SIGNAL r_data_one, r_data_two, r_data_tree : signed(8 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL r_valid_shift : STD_LOGIC_VECTOR(2 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL w_result_w_threshold : signed(9 DOWNTO 0);
 BEGIN
     -- inputs
-    enable <= ast_out_ready;
+    w_enable <= ast_out_ready AND ast_in_valid;
 
-    -- parallel register output
-
+    --------------------------------------------------------------
     -- reg-state logic
+    --------------------------------------------------------------
     PROCESS (clk)
     BEGIN
         IF reset = '1' THEN
+            r_valid_shift <= (OTHERS => '0');
+            r_data_one <= (OTHERS => '0');
+            r_data_two <= (OTHERS => '0');
+            r_data_tree <= (OTHERS => '0');
         ELSE
             IF rising_edge(clk) THEN
-                IF enable = '1' THEN
+
+                IF w_enable = '1' THEN
+                    r_data_one <= to_signed(to_integer(unsigned(ast_in_data)), 9);
+                    r_data_two <= r_data_one;
+                    r_data_tree <= r_data_two;
                 ELSE
+                    r_data_one <= r_data_one;
+                    r_data_two <= r_data_two;
+                    r_data_tree <= r_data_tree;
+                END IF;
+
+                IF ast_out_ready = '1' THEN
+                    r_valid_shift(2) <= r_valid_shift(1);
+                    r_valid_shift(1) <= r_valid_shift(0);
+                    r_valid_shift(0) <= ast_in_valid;
+                ELSE
+                    r_valid_shift(0) <= r_valid_shift(0);
+                    r_valid_shift(1) <= r_valid_shift(1);
+                    r_valid_shift(2) <= r_valid_shift(2);
                 END IF;
             END IF;
         END IF;
     END PROCESS;
-
+    ---------------------------------------------------------------------
     -- next-state logic
+    ------------------------------------------------------------------
 
+    --------------------------------------------------------------------
     -- outputs
-
+    --------------------------------------------------------------------
+    ast_in_ready <= ast_out_ready;
+    ast_out_valid <= r_valid_shift(2) AND ast_out_ready;
+    -- output data
+    w_result_w_threshold <= to_signed(to_integer(r_data_one) + to_integer(r_data_tree * (-1)) + 128, 10);
+    ast_out_data <= (OTHERS => '0') WHEN (w_result_w_threshold < 0) ELSE
+        (OTHERS => '1') WHEN (w_result_w_threshold > 255) ELSE
+        STD_LOGIC_VECTOR(to_unsigned(to_integer(w_result_w_threshold), 8));
 END ARCHITECTURE;

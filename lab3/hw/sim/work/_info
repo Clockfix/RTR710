@@ -10,38 +10,38 @@ z2
 cModel Technology
 Z0 d/home/rihards/life/projects/RTU_SoC/5_image_processing/hw/sim
 Pcomponents
-Z1 DPx4 work 10 data_types 0 22 _V0jOo3@g3]8fm=4ToDMY2
+Z1 DPx4 work 10 data_types 0 22 `DA9Lgg@PAKME6h4c2In>3
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 203
-Z4 w1603731116
+!i122 406
+Z4 w1610807679
 Z5 d/home/imants/programs/git/RTR710/lab3/hw/sim
 Z6 8../src/components.vhd
 Z7 F../src/components.vhd
 l0
 L8 1
-VU0cogejD9md1Bmnk]Ccoi3
-!s100 LF6jELJV648n@3=YR`e9R0
+VN6jUWP:aE4^<2[K>k;bUc2
+!s100 8_ATigWM<b^3`Cf0dTRG=3
 Z8 OV;C;2020.1;71
 33
-Z9 !s110 1607969524
+Z9 !s110 1611491028
 !i10b 1
-Z10 !s108 1607969524.000000
+Z10 !s108 1611491028.000000
 Z11 !s90 -reportprogress|300|-work|work|-2008|../src/components.vhd|../src/data_types.vhd|../src/delay_std_logic.vhd|../src/delay_std_logic_vector.vhd|../src/image_darkener.vhd|../src/image_gray.vhd|../src/image_sobelHor.vhd|../src/parallel_output.vhd|
 Z12 !s107 ../src/parallel_output.vhd|../src/image_sobelHor.vhd|../src/image_gray.vhd|../src/image_darkener.vhd|../src/delay_std_logic_vector.vhd|../src/delay_std_logic.vhd|../src/data_types.vhd|../src/components.vhd|
 !i113 1
 Z13 o-work work -2008
 Z14 tExplicit 1 CvgOpt 0
 Bbody
-Z15 DPx4 work 10 components 0 22 U0cogejD9md1Bmnk]Ccoi3
+Z15 DPx4 work 10 components 0 22 N6jUWP:aE4^<2[K>k;bUc2
 R1
 R2
 R3
-!i122 203
+!i122 406
 l0
-L102 1
-Vg_9le?G?AORW1khEalK>H2
-!s100 f;jO_@GDZe[<>dF?GoYfQ3
+L98 1
+Vb]A1cOSU=XEE>k:<^4TEN1
+!s100 <ifhDaZ=MPCN0T^8m4jiD1
 R8
 33
 R9
@@ -55,15 +55,15 @@ R14
 Pdata_types
 R2
 R3
-!i122 203
-R4
+!i122 406
+Z16 w1610807672
 R5
-Z16 8../src/data_types.vhd
-Z17 F../src/data_types.vhd
+Z17 8../src/data_types.vhd
+Z18 F../src/data_types.vhd
 l0
 L7 1
-V_V0jOo3@g3]8fm=4ToDMY2
-!s100 B7?mmFiB5N<LD_b03oT@h1
+V`DA9Lgg@PAKME6h4c2In>3
+!s100 =mcODPFo8F97z[V1DGe5E3
 R8
 33
 R9
@@ -78,7 +78,7 @@ Bbody
 R1
 R2
 R3
-!i122 203
+!i122 406
 l0
 L11 1
 V@UA[8_@PbJ<2noGo]BVH>3
@@ -94,17 +94,17 @@ R12
 R13
 R14
 Edelay_std_logic
-R4
+Z19 w1610807635
 R2
 R3
-!i122 203
+!i122 406
 R5
-Z18 8../src/delay_std_logic.vhd
-Z19 F../src/delay_std_logic.vhd
+Z20 8../src/delay_std_logic.vhd
+Z21 F../src/delay_std_logic.vhd
 l0
 L4 1
-VeIV?L0Q22F:z7CfZ<6?^11
-!s100 kczD4fJ7LH_D]f1Pz63WS2
+V:RUOdMgEW;OkffIL6WTLn1
+!s100 EGCjh@0_Z<aiik^7BW5GJ1
 R8
 33
 R9
@@ -118,12 +118,12 @@ R14
 Artl
 R2
 R3
-DEx4 work 15 delay_std_logic 0 22 eIV?L0Q22F:z7CfZ<6?^11
-!i122 203
-l22
-L20 44
-V]]?S_7LM?GB`<@aISXKOP3
-!s100 NR4IHW`0YcJ:oBiB<OJ221
+DEx4 work 15 delay_std_logic 0 22 :RUOdMgEW;OkffIL6WTLn1
+!i122 406
+l18
+L16 42
+V<>Me2R^NhNY?CMFKOamdc0
+!s100 :=VDN;IL8fXQLA[i;800D2
 R8
 33
 R9
@@ -135,18 +135,18 @@ R12
 R13
 R14
 Edelay_std_logic_vector
-R4
+Z22 w1610807664
 R1
 R2
 R3
-!i122 203
+!i122 406
 R5
-Z20 8../src/delay_std_logic_vector.vhd
-Z21 F../src/delay_std_logic_vector.vhd
+Z23 8../src/delay_std_logic_vector.vhd
+Z24 F../src/delay_std_logic_vector.vhd
 l0
 L7 1
-VnA]]PdCjiz4BeD>Tk17Dz3
-!s100 ZP;Y5RC9IaQ_>V4?F;J<P2
+VSkX[=bz5?d@GF?A1n2c;?1
+!s100 hCCD41NPfEca]SVQT?dfZ0
 R8
 33
 R9
@@ -161,12 +161,12 @@ Artl
 R1
 R2
 R3
-DEx4 work 22 delay_std_logic_vector 0 22 nA]]PdCjiz4BeD>Tk17Dz3
-!i122 203
-l25
-L23 45
-V6YP@RJRViNF;8LL;<80k61
-!s100 bIgf6cHdXKYok^lJL5ahL2
+DEx4 work 22 delay_std_logic_vector 0 22 SkX[=bz5?d@GF?A1n2c;?1
+!i122 406
+l21
+L19 43
+Vh]ng:?]@HJGGFa:W[_LW:2
+!s100 KAfz;GTcFbd8hN97^>jL80
 R8
 33
 R9
@@ -178,14 +178,14 @@ R12
 R13
 R14
 Eimage_darkener
-Z22 w1607891176
-Z23 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z25 w1611443376
+Z26 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 R2
 R3
-!i122 203
+!i122 406
 R5
-Z24 8../src/image_darkener.vhd
-Z25 F../src/image_darkener.vhd
+Z27 8../src/image_darkener.vhd
+Z28 F../src/image_darkener.vhd
 l0
 L4 1
 V4F@N;?5@SDc7F[Xi@XdOb3
@@ -201,15 +201,15 @@ R12
 R13
 R14
 Artl
-R23
+R26
 R2
 R3
 DEx4 work 14 image_darkener 0 22 4F@N;?5@SDc7F[Xi@XdOb3
-!i122 203
-l31
-L22 53
-VZja7_`M0gPXBGDI?=HIV[0
-!s100 b<IkL_QokHABcP9R5KBme0
+!i122 406
+l28
+L22 41
+VR<Y2h7hF7zQlO35IN;]?>2
+!s100 cXBla[z_iDC1n4iFVc_XV1
 R8
 33
 R9
@@ -222,15 +222,15 @@ R13
 R14
 Eimage_darkener_t
 w1575465836
-Z26 DPx3 edi 10 data_types 0 22 6WOl71`Y^m^10cEgEbR[B0
+Z29 DPx3 edi 10 data_types 0 22 6WOl71`Y^m^10cEgEbR[B0
 DPx4 ieee 9 math_real 0 22 Sk6CSihbPL<f[^Shm]=KX0
-Z27 DPx3 edi 10 simulation 0 22 ^L`ilWMzK;ZkI=o1UQ0Y03
+Z30 DPx3 edi 10 simulation 0 22 ^L`ilWMzK;ZkI=o1UQ0Y03
 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 R2
 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
 R0
-Z28 8image_darkener_tb.vhd
-Z29 Fimage_darkener_tb.vhd
+Z31 8image_darkener_tb.vhd
+Z32 Fimage_darkener_tb.vhd
 l0
 L8
 V`A326dBQhfbok?71>oaOL0
@@ -240,73 +240,73 @@ OV;C;10.5b;63
 !s110 1575465839
 !i10b 1
 !s108 1575465839.000000
-Z30 !s90 -work|work|-2008|image_darkener_tb.vhd|
-Z31 !s107 image_darkener_tb.vhd|
+!s90 -work|work|-2008|image_darkener_tb.vhd|
+Z33 !s107 image_darkener_tb.vhd|
 !i113 1
 R13
 R14
 Eimage_darkener_tb
-Z32 w1606902878
+Z34 w1606902878
 R1
 R15
+R29
+Z35 DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
+R30
 R26
-Z33 DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
-R27
-R23
 R2
 R3
-!i122 188
+!i122 208
 R5
-R28
-R29
+R31
+R32
 l0
 L8 1
 VOV=IZ^UOiNc2Qf500bzVU1
 !s100 M:ddiF3gZW<CPDC74T7;=2
 R8
 33
-Z34 !s110 1607891180
+Z36 !s110 1611481819
 !i10b 1
-Z35 !s108 1607891180.000000
-R30
-R31
+Z37 !s108 1611481819.000000
+Z38 !s90 -reportprogress|300|-work|work|-2008|image_darkener_tb.vhd|
+R33
 !i113 1
 R13
 R14
 Artl
 R1
 R15
+R29
+R35
+R30
 R26
-R33
-R27
-R23
 R2
 R3
 DEx4 work 17 image_darkener_tb 0 22 OV=IZ^UOiNc2Qf500bzVU1
-!i122 188
+!i122 208
 l27
 L15 95
 VmzYXj=i2]HU?`zlM<8`CC2
 !s100 APkkOLCQ>XH;<TQMc`d_01
 R8
 33
-R34
+R36
 !i10b 1
-R35
-R30
-R31
+R37
+R38
+R33
 !i113 1
 R13
 R14
 Eimage_gray
-Z36 w1607969324
-R23
+Z39 w1611422816
+R26
 R2
 R3
-!i122 203
+!i122 406
 R5
-Z37 8../src/image_gray.vhd
-Z38 F../src/image_gray.vhd
+Z40 8../src/image_gray.vhd
+Z41 F../src/image_gray.vhd
 l0
 L4 1
 VZ3_8;1;aUg=J>0QQRal>B1
@@ -322,15 +322,15 @@ R12
 R13
 R14
 Artl
-R23
+R26
 R2
 R3
 DEx4 work 10 image_gray 0 22 Z3_8;1;aUg=J>0QQRal>B1
-!i122 203
-l49
-L24 103
-V[MGQ;aLS7=1hZb]HA`2d33
-!s100 g[M@4;l:GoEaclUc>gQ=e3
+!i122 406
+l43
+L24 87
+VP=>Hm;h=65gBQJYoWg>_R0
+!s100 UlW8[ePH;_AI8zCGgO`h>0
 R8
 33
 R9
@@ -342,73 +342,73 @@ R12
 R13
 R14
 Eimage_gray_tb
-Z39 w1607872117
-R1
-R15
+Z42 w1607872117
+Z43 DPx4 work 10 data_types 0 22 _V0jOo3@g3]8fm=4ToDMY2
+Z44 DPx4 work 10 components 0 22 U0cogejD9md1Bmnk]Ccoi3
+R29
+R35
+R30
 R26
-R33
-R27
-R23
 R2
 R3
 !i122 204
 R5
-Z40 8image_gray_tb.vhd
-Z41 Fimage_gray_tb.vhd
+Z45 8image_gray_tb.vhd
+Z46 Fimage_gray_tb.vhd
 l0
 L8 1
 V_=[z5h5FegT21LlEdER>C3
 !s100 i2EJE9Ea8Hn40UhCmzGbL1
 R8
 33
-R9
+Z47 !s110 1607969524
 !i10b 1
-R10
-Z42 !s90 -reportprogress|300|-work|work|-2008|image_gray_tb.vhd|
-Z43 !s107 image_gray_tb.vhd|
+Z48 !s108 1607969524.000000
+Z49 !s90 -reportprogress|300|-work|work|-2008|image_gray_tb.vhd|
+Z50 !s107 image_gray_tb.vhd|
 !i113 1
 R13
 R14
 Artl
-R1
-R15
+R43
+R44
+R29
+R35
+R30
 R26
-R33
-R27
-R23
 R2
 R3
-Z44 DEx4 work 13 image_gray_tb 0 22 _=[z5h5FegT21LlEdER>C3
+DEx4 work 13 image_gray_tb 0 22 _=[z5h5FegT21LlEdER>C3
 !i122 204
 l26
-Z45 L12 106
-Z46 Vf8UNA6O[92]:02cDiDS252
-Z47 !s100 [<0]9B]Ezi=>APAC^>ABX3
+L12 106
+Vf8UNA6O[92]:02cDiDS252
+!s100 [<0]9B]Ezi=>APAC^>ABX3
 R8
 33
-R9
+R47
 !i10b 1
-R10
-R42
-R43
+R48
+R49
+R50
 !i113 1
 R13
 R14
 Eimage_sobelhor
-R4
+Z51 w1611490884
 R15
 R1
-R23
+R26
 R2
 R3
-!i122 203
+!i122 406
 R5
-Z48 8../src/image_sobelHor.vhd
-Z49 F../src/image_sobelHor.vhd
+Z52 8../src/image_sobelHor.vhd
+Z53 F../src/image_sobelHor.vhd
 l0
-L8 1
-V:Saf]zkl>?9j_=3Q052KK2
-!s100 dRbKJKe?oQz2_d`=KzeAE3
+L6 1
+VC^Kf5M99D:b;^mE0dJ4TY2
+!s100 NNWPcD^69gNoK^@OABNR10
 R8
 33
 R9
@@ -422,15 +422,15 @@ R14
 Artl
 R15
 R1
-R23
+R26
 R2
 R3
-DEx4 work 14 image_sobelhor 0 22 :Saf]zkl>?9j_=3Q052KK2
-!i122 203
-l25
-L23 26
-VB1>n<2E1]_PezASBSje2m2
-!s100 a4b12@6>SWaOYBni9^kYO1
+DEx4 work 14 image_sobelhor 0 22 C^Kf5M99D:b;^mE0dJ4TY2
+!i122 406
+l26
+L21 59
+VjbZ1OLa@C9?G`<Cgfn?3V1
+!s100 X^CTmMDg:dDe?8O;LIS?D1
 R8
 33
 R9
@@ -442,72 +442,72 @@ R12
 R13
 R14
 Eimage_sobelhor_tb
-Z50 w1606903007
+Z54 w1611488358
 R1
 R15
+R29
+R35
+R30
 R26
-R33
-R27
-R23
 R2
 R3
-!i122 71
-Z51 d/home/rihards/projects/teaching/courses/soc/lab3_image_processing/hw/sim
-Z52 8image_sobelHor_tb.vhd
-Z53 Fimage_sobelHor_tb.vhd
+!i122 407
+R5
+Z55 8image_sobelHor_tb.vhd
+Z56 Fimage_sobelHor_tb.vhd
 l0
 L9 1
 Vd9V]AfRgc^b@22ILT4Si;3
 !s100 9JXHj654bO_U0GZ9`HzME1
 R8
 33
-Z54 !s110 1606903020
+Z57 !s110 1611491029
 !i10b 1
-Z55 !s108 1606903020.000000
-Z56 !s90 -work|work|-2008|image_sobelHor_tb.vhd|
-Z57 !s107 image_sobelHor_tb.vhd|
+R10
+Z58 !s90 -reportprogress|300|-work|work|-2008|image_sobelHor_tb.vhd|
+Z59 !s107 image_sobelHor_tb.vhd|
 !i113 1
 R13
 R14
 Artl
 R1
 R15
+R29
+R35
+R30
 R26
-R33
-R27
-R23
 R2
 R3
-DEx4 work 17 image_sobelhor_tb 0 22 d9V]AfRgc^b@22ILT4Si;3
-!i122 71
+Z60 DEx4 work 17 image_sobelhor_tb 0 22 d9V]AfRgc^b@22ILT4Si;3
+!i122 407
 l27
-L13 106
-V3iDM]^FNY4`1UQI`5MU_G2
-!s100 [8=3jo?2Q_FZB@^=4gj0B1
+Z61 L13 106
+Z62 V[hF]N?aA_^AlgG9T?kN6`0
+Z63 !s100 fbI^5nHEgPAoCa3QMEc9M1
 R8
 33
-R54
-!i10b 1
-R55
-R56
 R57
+!i10b 1
+R10
+R58
+R59
 !i113 1
 R13
 R14
 Eparallel_output
-R4
+Z64 w1610807657
 R1
-R23
+R26
 R2
 R3
-!i122 203
+!i122 406
 R5
-Z58 8../src/parallel_output.vhd
-Z59 F../src/parallel_output.vhd
+Z65 8../src/parallel_output.vhd
+Z66 F../src/parallel_output.vhd
 l0
-L7 1
-Vf5^ENDNFbh8SlI1V9@P=h3
-!s100 <TL0D[U4FdQ0j;;34KD7I1
+L5 1
+V?lNM21`]SD]2XGLVH:oDR1
+!s100 ]ETjRH9LL5ECbjI1FGS>G1
 R8
 33
 R9
@@ -520,15 +520,15 @@ R13
 R14
 Artl
 R1
-R23
+R26
 R2
 R3
-DEx4 work 15 parallel_output 0 22 f5^ENDNFbh8SlI1V9@P=h3
-!i122 203
-l24
-L22 34
-VVdO_^:a[BUbi2JHze3l0F2
-!s100 AClO0dOEoTY^1K2>OgEC40
+DEx4 work 15 parallel_output 0 22 ?lNM21`]SD]2XGLVH:oDR1
+!i122 406
+l20
+L18 34
+V`B]9?8=eN;aPZXG6?PAco0
+!s100 69zLdDLEd7GnPV>9PiH`z1
 R8
 33
 R9
