@@ -13,10 +13,14 @@ vcom -work work -2008 image_gray_tb.vhd
 
 # simulation
 vsim image_gray_tb
-add wave -position insertpoint  sim:/image_gray_tb/clk sim:/image_gray_tb/ast_in_valid sim:/image_gray_tb/ast_in_ready sim:/image_gray_tb/ast_out_valid sim:/image_gray_tb/ast_out_data sim:/image_gray_tb/ast_out_ready sim:/image_gray_tb/ast_in_data_delayed
-add wave -position end  sim:/image_gray_tb/DUT/r_red_in_reg
-add wave -position end  sim:/image_gray_tb/DUT/r_green_in_reg
-add wave -position end  sim:/image_gray_tb/DUT/r_blue_in_reg
+add wave -position insertpoint  sim:/image_gray_tb/clk 
+add wave -color red -position end sim:/image_gray_tb/ast_in_valid 
+add wave -color red -position end sim:/image_gray_tb/ast_out_ready 
+add wave -color red -radix hex -position end sim:/image_gray_tb/ast_in_data 
+add wave -color yellow -radix hex -position end sim:/image_gray_tb/ast_in_data_delayed
+add wave -color blue -radix unsigned -position end sim:/image_gray_tb/ast_out_data 
+add wave -color blue -position end sim:/image_gray_tb/ast_in_ready 
+add wave -color blue -position end sim:/image_gray_tb/ast_out_valid 
 run -all
 wave zoom full
 quit

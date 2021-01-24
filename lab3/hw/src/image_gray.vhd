@@ -23,16 +23,12 @@ END ENTITY;
 
 ARCHITECTURE RTL OF image_gray IS
     SIGNAL enable : STD_LOGIC;
-    -- input registers
-    -- SIGNAL r_red_in_reg, r_red_in_next : unsigned(7 DOWNTO 0) := (OTHERS => '0');
-    -- SIGNAL r_green_in_reg, r_green_in_next : unsigned(7 DOWNTO 0) := (OTHERS => '0');
-    -- SIGNAL r_blue_in_reg, r_blue_in_next : unsigned(7 DOWNTO 0) := (OTHERS => '0');
 
     -- shift registers
-    SIGNAL r_red_shift_one_reg, r_red_shift_one_next : unsigned(7 DOWNTO 0) := (OTHERS => '0'); -- /4
-    SIGNAL r_red_shift_two_reg, r_red_shift_two_next : unsigned(7 DOWNTO 0) := (OTHERS => '0'); -- /8
-    SIGNAL r_green_shift_reg, r_green_shift_next : unsigned(7 DOWNTO 0) := (OTHERS => '0'); -- /2
-    SIGNAL r_blue_shift_reg, r_blue_shift_next : unsigned(7 DOWNTO 0) := (OTHERS => '0'); -- /8
+    SIGNAL w_red_shift_one: unsigned(7 DOWNTO 0) ; -- /4
+    SIGNAL w_red_shift_two : unsigned(7 DOWNTO 0) ; -- /8
+    SIGNAL w_green_shift : unsigned(7 DOWNTO 0) ; -- /2
+    SIGNAL w_blue_shift : unsigned(7 DOWNTO 0) ; -- /8
 
     -- sum registers
     SIGNAL r_red_sum_reg, r_red_sum_next : unsigned(7 DOWNTO 0) := (OTHERS => '0');
@@ -42,83 +38,57 @@ ARCHITECTURE RTL OF image_gray IS
     SIGNAL r_gray_out_reg, r_gray_out_next : unsigned(7 DOWNTO 0) := (OTHERS => '0');
 
     -- valid shift registers
-    SIGNAL r_valid_one, r_valid_two, r_valid_three : STD_LOGIC := '0';
+    SIGNAL r_valid_delay : STD_LOGIC := '0';
 
 BEGIN
     -- inputs
-    enable <= ast_out_ready;
-
+    enable <= ast_out_ready;        -- for better readability
+    ----------------------------------------------------------------
     -- reg-state logic
+    ----------------------------------------------------------------
     PROCESS (clk)
     BEGIN
         IF reset = '1' THEN
-            -- input registers
-            -- r_red_in_reg <= (OTHERS => '0');
-            -- r_green_in_reg <= (OTHERS => '0');
-            -- r_blue_in_reg <= (OTHERS => '0');
-            -- shift registers
-            r_red_shift_one_reg <= (OTHERS => '0');
-            r_red_shift_two_reg <= (OTHERS => '0');
-            r_green_shift_reg <= (OTHERS => '0');
-            r_blue_shift_reg <= (OTHERS => '0');
             -- sum registers
             r_red_sum_reg <= (OTHERS => '0');
             r_green_blue_sum_reg <= (OTHERS => '0');
             -- output registers
             r_gray_out_reg <= (OTHERS => '0');
             -- valid shift registers
-            r_valid_one <= '0';
-            r_valid_two <= '0';
-            r_valid_three <= '0';
-            -- r_valid_four <= '0';
+            r_valid_delay <= '0';
         ELSE
             IF rising_edge(clk) THEN
                 IF enable = '1' THEN
-                    -- input registers
-                    -- r_red_in_reg <= r_red_in_next;
-                    -- r_green_in_reg <= r_green_in_next;
-                    -- r_blue_in_reg <= r_blue_in_next;
-                    -- shift registers
-                    r_red_shift_one_reg <= r_red_shift_one_next;
-                    r_red_shift_two_reg <= r_red_shift_two_next;
-                    r_green_shift_reg <= r_green_shift_next;
-                    r_blue_shift_reg <= r_blue_shift_next;
                     -- sum registers
                     r_red_sum_reg <= r_red_sum_next;
                     r_green_blue_sum_reg <= r_green_blue_sum_next;
                     -- output registers
                     r_gray_out_reg <= r_gray_out_next;
                     -- valid shift registers
-                    r_valid_one <= ast_in_valid;
-                    r_valid_two <= r_valid_one;
-                    r_valid_three <= r_valid_two;
-                    -- r_valid_four <= r_valid_three;
+                    r_valid_delay <= ast_in_valid;
                 END IF;
             END IF;
         END IF;
     END PROCESS;
-
+    ----------------------------------------------------------------
     -- next-state logic
+    ----------------------------------------------------------------
 
-    -- input registers
-    -- r_red_in_next <= unsigned(ast_in_data(23 downto 16));
-    -- r_green_in_next <= unsigned(ast_in_data(15 DOWNTO 8));
-    -- r_blue_in_next <= unsigned(ast_in_data(7 DOWNTO 0));
     -- shift registers
-    r_red_shift_one_next <= to_unsigned(to_integer(unsigned(ast_in_data(23 DOWNTO 18))), 8); -- /4
-    r_red_shift_two_next <= to_unsigned(to_integer(unsigned(ast_in_data(23 DOWNTO 19))), 8); -- /8
-    r_green_shift_next <= to_unsigned(to_integer(unsigned(ast_in_data(15 DOWNTO 9))), 8); -- /2
-    r_blue_shift_next <= to_unsigned(to_integer(unsigned(ast_in_data(7 DOWNTO 3))), 8); -- /8
+    w_red_shift_one <= to_unsigned(to_integer(unsigned(ast_in_data(23 DOWNTO 18))), 8); -- /4
+    w_red_shift_two <= to_unsigned(to_integer(unsigned(ast_in_data(23 DOWNTO 19))), 8); -- /8
+    w_green_shift <= to_unsigned(to_integer(unsigned(ast_in_data(15 DOWNTO 9))), 8); -- /2
+    w_blue_shift <= to_unsigned(to_integer(unsigned(ast_in_data(7 DOWNTO 3))), 8); -- /8
     -- sum registers
-    r_red_sum_next <= to_unsigned((to_integer(r_red_shift_one_reg) + to_integer(r_red_shift_two_reg)), 8); -- red
-    r_green_blue_sum_next <= to_unsigned((to_integer(r_blue_shift_reg) + to_integer(r_green_shift_reg)), 8); -- blue + green
+    r_red_sum_next <= to_unsigned((to_integer(w_red_shift_one) + to_integer(w_red_shift_two)), 8); -- red
+    r_green_blue_sum_next <= to_unsigned((to_integer(w_green_shift) + to_integer(w_blue_shift)), 8); -- blue + green
     -- output registers
     r_gray_out_next <= to_unsigned((to_integer(r_red_sum_reg) + to_integer(r_green_blue_sum_reg)), 8); -- gray
-
+    ----------------------------------------------------------------
     -- outputs
-
+    ----------------------------------------------------------------
     ast_in_ready <= enable;
-    ast_out_valid <= r_valid_three;
-    ast_out_data <= STD_LOGIC_VECTOR(r_gray_out_reg);
+    ast_out_valid <= r_valid_delay;
+    ast_out_data <= STD_LOGIC_VECTOR(r_gray_out_next); 
 
 END ARCHITECTURE;
