@@ -18,7 +18,7 @@ add wave -position end sim:/image_sobelhor_tb/ast_in_valid
 add wave -radix unsigned  -position end sim:/image_sobelhor_tb/ast_in_data 
 add wave -position end sim:/image_sobelhor_tb/ast_in_ready 
 add wave -color red -position end sim:/image_sobelhor_tb/ast_out_valid 
-add wave -color red -radix unsigned -position end sim:/image_sobelhor_tb/ast_out_data 
+add wave -color magenta -radix unsigned -position end sim:/image_sobelhor_tb/ast_out_data 
 add wave -position end sim:/image_sobelhor_tb/ast_out_ready 
 #add wave -radix unsigned -position end sim:/image_sobelhor_tb/ast_in_data_delayed 
 ####### Add DUT registers
@@ -27,8 +27,10 @@ add wave -color yellow -radix unsigned -position end sim:/image_sobelhor_tb/DUT/
 add wave -color blue -radix unsigned -position end sim:/image_sobelhor_tb/DUT/r_data_tree
 
 add wave -radix decimal -position end  sim:/image_sobelhor_tb/DUT/w_result_w_threshold
+add wave -radix unsigned -position end  sim:/image_sobelhor_tb/DUT/r_data_out_next
+add wave -radix unsigned -position end  sim:/image_sobelhor_tb/DUT/r_data_out_reg
 add wave -position end  sim:/image_sobelhor_tb/DUT/w_enable 
-#add wave -position end  sim:/image_sobelhor_tb/DUT/w_data_enable
 add wave -position end sim:/image_sobelhor_tb/DUT/r_valid_shift
 run -all
+wave zoom full
 quit

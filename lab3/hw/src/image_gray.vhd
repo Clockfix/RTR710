@@ -25,10 +25,10 @@ ARCHITECTURE RTL OF image_gray IS
     SIGNAL enable : STD_LOGIC;
 
     -- shift registers
-    SIGNAL w_red_shift_one: unsigned(7 DOWNTO 0) ; -- /4
-    SIGNAL w_red_shift_two : unsigned(7 DOWNTO 0) ; -- /8
-    SIGNAL w_green_shift : unsigned(7 DOWNTO 0) ; -- /2
-    SIGNAL w_blue_shift : unsigned(7 DOWNTO 0) ; -- /8
+    SIGNAL w_red_shift_one : unsigned(7 DOWNTO 0); -- /4
+    SIGNAL w_red_shift_two : unsigned(7 DOWNTO 0); -- /8
+    SIGNAL w_green_shift : unsigned(7 DOWNTO 0); -- /2
+    SIGNAL w_blue_shift : unsigned(7 DOWNTO 0); -- /8
 
     -- sum registers
     SIGNAL r_red_sum_reg, r_red_sum_next : unsigned(7 DOWNTO 0) := (OTHERS => '0');
@@ -42,7 +42,7 @@ ARCHITECTURE RTL OF image_gray IS
 
 BEGIN
     -- inputs
-    enable <= ast_out_ready;        -- for better readability
+    enable <= ast_out_ready; -- for better readability
     ----------------------------------------------------------------
     -- reg-state logic
     ----------------------------------------------------------------
@@ -89,6 +89,6 @@ BEGIN
     ----------------------------------------------------------------
     ast_in_ready <= enable;
     ast_out_valid <= r_valid_delay;
-    ast_out_data <= STD_LOGIC_VECTOR(r_gray_out_next); 
+    ast_out_data <= STD_LOGIC_VECTOR(r_gray_out_next);
 
 END ARCHITECTURE;

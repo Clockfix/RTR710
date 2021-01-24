@@ -24,4 +24,5 @@ add wave -color blue -position end sim:/image_darkener_tb/ast_out_valid
 add wave -color blue -radix unsigned -position end sim:/image_darkener_tb/ast_out_data 
 add wave -color blue -position end sim:/image_darkener_tb/ast_in_ready
 run -all
+wave zoom full
 quit

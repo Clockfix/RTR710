@@ -114,7 +114,6 @@ set_location_assignment PIN_AB27 -to hex5[3]
 set_location_assignment PIN_AB26 -to hex5[4]
 set_location_assignment PIN_AA26 -to hex5[5]
 set_location_assignment PIN_AA25 -to hex5[6]
-set_global_assignment -name QIP_FILE soc_system/synthesis/soc_system.qip
 set_global_assignment -name BDF_FILE main.bdf
 set_global_assignment -name VHDL_FILE ../src/components.vhd
 set_global_assignment -name VHDL_FILE ../src/data_types.vhd
